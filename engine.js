@@ -19,6 +19,18 @@ function getValueInfo(){
         Password: value_password
     };
 }
+function CheckAccount(username, email, password) {
+
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    
+ 
+    for (var i = 0; i < accounts.length; i++) {
+        if (accounts[i].username === username && accounts[i].email == email && accounts[i].password === password) {
+            return true; 
+        }
+    }
+    return false; 
+}
 // --- SIGN UP --- | Create Account
 function SignUp() {
     var info_results = getValueInfo();
@@ -30,6 +42,12 @@ function SignUp() {
         document.getElementById("error_info_text").textContent="";
     }
 
+    if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
+        document.getElementById("error_info_text").textContent="Invalid! The account already exists.";
+        return;
+    }else{
+        document.getElementById("error_info_text").textContent="";
+    }
     var newAccount = {
         username: info_results.Username,
         email: info_results.Email,
