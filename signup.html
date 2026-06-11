@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thienshop - Sign Up</title>
+    </head>
+    <body>
+        <div class="box_menu_sign_in" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <label style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;position: relative; top:-40%; right:-2%; font-size: 35px;"><b>thienshop</b></label>
+            <label style="text-align: center;transform: translateX(-10%) translateY(-400%); font-size: 30px;">Let's go shopping!</label>
+            <label style="font-family: Arial, Helvetica, sans-serif; text-align: center;font-size: 40px; transform: translateY(-270%);"><b>Sign Up to Thienshop</b></label>
+            
+            <div style="text-align: center; background-color: white; position: absolute; right: 35%; bottom: 32%;">
+                <label for="username" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;">Username</label><br>
+                <input id="username" type="text" placeholder="Username" class="enter_box"><br>
+                <label for="email" class="label_box" style="position: fixed;transform: translateX(-240%) translateY(40%);background-color: white;width: 60px;">E-mail</label><br>
+                <input id ="email" type="text" placeholder="E-mail (ex: account@gmail.com)" class ="enter_box"><br>
+                <label for="password" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;">Password</label><br>
+                <input type="password" placeholder="Password" class="enter_box" id="password"><br>
+                <button type="submit" style="position: fixed; height: 70px; width: 325px;left: 15.5%; top: 70%;background-color: royalblue;border-color: royalblue;color: white;font-size: 20px; transition: 0.3s;" onclick="SignUp()" class="ani_button">SIGN UP</button>
+                <label style="color: red;position: absolute; bottom: -50%; left: 0%;text-align: left;" id="error_info_text"></label>
+            </div>
+            <label style="position: absolute;bottom:0px; font-size: 20px;">You had an account?</label>
+            <a href="signin.html" style="position: absolute;bottom:0px; font-size: 20px;right: 76.5%;">Sign In</a>
+        </div>
+        <script src="engine.js"></script>
+    </body>
+    <style>
+        /* SOURCE CSS - */
+        *{
+            margin: 0;
+        }
+        html{
+            height: 100%;
+            
+        }
+        body{
+            background-image: url('https://images.pexels.com/photos/31266794/pexels-photo-31266794.jpeg');
+            background-size: 100% auto;        /* Phủ kín toàn màn hình */
+            background-position: center;   /* Canh giữa */
+            background-repeat: no-repeat;  /* Không lặp */
+            background-attachment: fixed;    /* Cố định */
+            height: 100%;
+            
+        }
+        .box_menu_sign_in{
+            
+            background-color: white;
+            width: 50%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        .button_sign{
+            border-radius: 10px;
+            border: 2px solid blue;
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            font-size: 15px;
+            background-color: blue;
+            border: 2px ridge blue;
+            color:white;
+            transition: 0.3s;
+        }
+        .button_sign:hover{
+            background-color: rgba(0, 26, 255, 0.685);
+            border: 2px ridge rgba(0, 26, 255, 0.685);
+            font-size: 22px;
+        }
+
+        .enter_box{
+            height: 50px;
+            width: 300px;
+            font-size: 15px;
+            padding-left: 20px;
+
+        }
+        .ani_butoon:hover{
+            background-color: rgba(42, 64, 129, 0.911);
+        }
+    </style>
+</html>
