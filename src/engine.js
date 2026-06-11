@@ -43,7 +43,7 @@ function SignUp() {
     }
 
     if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
-        document.getElementById("error_info_text").textContent="Invalid! The account already exists.";
+        document.getElementById("error_info_text").textContent="Invalid! Username, E-mail, Password of other account already exists.";
         return;
     }else{
         document.getElementById("error_info_text").textContent="";
