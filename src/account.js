@@ -65,3 +65,15 @@ function SignUp() {
     alert("Successfully created your account! Let's sign in.");
     window.location.href="signin.html";
 }
+// --- SIGN IN --- | Check Account and login
+function SignIn(){
+    var info_results = getValueInfo();
+    if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
+        document.getElementById("error_info_text").textContent = "Incorrect! Check again your username, email, password.";
+        return;
+    }else{
+        document.getElementById("error_info_text").textContent = "";
+    }
+    sessionStorage.setItem("User_account",info_results.Username); // save session user account temp on Browser
+    window.location.href = "home.html";
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thienshop - Home</title>
+</head>
+<body>
+    <div class="header">
+        <label class="logo_header"><b>thienshop</b></label>
+        <button class="home">Home</button>
+        <button class="sales">Sales</button>
+        <input type="search" class="box_search" placeholder="Search for products,...">
+        <button class="button_acc">
+            <img src="https://as2.ftcdn.net/jpg/04/62/63/65/1000_F_462636502_9cDAYuyVvBY4qYJlHjW7vqar5HYS8h8x.jpg" width="50px" height="50px" style="border-radius: 25px;">
+            <label style="position: relative;top:-15px; color:white;font-size: 20px;" id="show_username">Guest</label>
+        </button>
+    </div>
+</body>
+<script src="CPE.js"></script>
+<style>
+    .header{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(4, 110, 250);
+        width: 100%;
+        height: 80px;
+    } 
+    .logo_header{
+        color: white;
+        position: relative;
+        top:-20%;
+        left: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 35px;
+    }
+    .box_search{
+        position: relative;
+        top:-20%;  
+        left:25%;
+        width: 10cm;
+        height: 1cm;
+        border-radius: 16px;
+        outline: none;
+        border: none;
+    }
+    .home{
+        position: relative;
+        top:-20%;
+        margin-left: 5%;
+        color:white;
+        background-color: rgb(4, 110, 250);
+        border: none;
+        transition: 0.3s;
+        font-size:20px;
+        height: 80px;
+        width: 100px;
+    }
+    .home:hover{
+        background-color: rgba(4, 160, 250, 0.329);
+    }
+    .sales{
+        position: relative;
+        top:-20%;
+        margin-left: auto;
+        color:white;
+        background-color: rgb(4, 110, 250);
+        border: none;
+        transition: 0.3s;
+        font-size: 20px;
+        height: 80px;
+        width: 100px;
+    }
+    .sales:hover{
+        background-color: rgba(4, 160, 250, 0.329);
+    }
+    .button_acc{
+        position: relative;
+        border: none;
+        height: 80px;
+        background-color: rgb(4, 110, 250);
+        left:40%;
+        
+    }
+    .button_acc:hover{
+        background-color: rgba(4, 160, 250, 0.329);
+    }
+</style>
+</html>

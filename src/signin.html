@@ -22,12 +22,15 @@
                 <input id ="email" type="text" placeholder="E-mail (ex: account@gmail.com)" class ="enter_box"><br>
                 <label for="password" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;">Password</label><br>
                 <input type="password" placeholder="Password" class="enter_box" id="password"><br>
-                <button type="submit" style="position: fixed; height: 70px; width: 325px;left: 15.5%; top: 70%;background-color: royalblue;border-color: royalblue;color: white;font-size: 20px;" onclick="getValueInfo()">SIGN IN</button>
+                <a href="" style="position: relative; right: 90px;">Forget your password?</a>
+                <button type="submit" style="position: fixed; height: 70px; width: 325px;left: 15.5%; top: 70%;background-color: royalblue;border-color: royalblue;color: white;font-size: 20px;" onclick="SignIn()">SIGN IN</button>
+                <label style="color: red;position: absolute; bottom: -56%; left: 0%;text-align: left;" id="error_info_text"></label>
             </div>
+            
             <label style="position: absolute;bottom:0px; font-size: 20px;">You had not an account?</label>
             <a href="signup.html" style="position: absolute;bottom:0px; font-size: 20px;right: 72%;">Sign Up</a>
         </div>
-        <script src="engine.js"></script>
+        <script src="account.js"></script>
     </body>
     <style>
         /* SOURCE CSS - */
