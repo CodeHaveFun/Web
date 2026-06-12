@@ -8,21 +8,25 @@
     <body>
         <div class="box_menu_sign_in" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;background-color: white;">
             <label style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;position: relative; top:-40%; right:-2%; font-size: 35px;"><b>thienshop</b></label>
-            <label style="text-align: center;transform: translateX(-10%) translateY(-400%); font-size: 30px;">Let's go shopping!</label>
-            <label style="font-family: Arial, Helvetica, sans-serif; text-align: center;font-size: 40px; transform: translateY(-270%);"><b>Sign Up to Thienshop</b></label>
+            <label style="position: relative;text-align: center;font-size: 30px;top:-20%;left:-8%;">Let's go shopping! 🛒</label>
+            <label style="position: relative;font-family: Arial, Helvetica, sans-serif; text-align: center;font-size: 40px; top:-18%;left:0%;"><b>Sign Up to Thienshop</b></label>
             
             <div style="text-align: center; background-color: white; position: absolute; right: 35%; bottom: 32%;">
                 <label for="username" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;">Username</label><br>
                 <input id="username" type="text" placeholder="Username" class="enter_box"><br>
+
                 <label for="email" class="label_box" style="position: fixed;transform: translateX(-240%) translateY(40%);background-color: white;width: 60px;">E-mail</label><br>
                 <input id ="email" type="text" placeholder="E-mail (ex: account@gmail.com)" class ="enter_box"><br>
-                <label for="password" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;">Password</label><br>
+
+                <label for="password" style="position: fixed;background-color: white;width: 80px;transform: translateX(-180%) translateY(40%);">Password</label><br>
+                
                 <input type="password" placeholder="Password" class="enter_box" id="password"><br>
-                <button type="submit" style="position: fixed; height: 70px; width: 325px;left: 15.5%; top: 70%;background-color: royalblue;border-color: royalblue;color: white;font-size: 20px; transition: 0.3s;" onclick="SignUp()" class="ani_button">SIGN UP</button>
+
+                <button style="position: fixed; height: 70px; width: 325px;transform: translateX(-50%) translateY(40%);background-color: royalblue;border-color: royalblue;color: white;font-size: 20px;" onclick="SignUp()" class="ani_button">SIGN UP</button>
                 <label style="color: red;position: absolute; bottom: -56%; left: 0%;text-align: left;" id="error_info_text"></label>
             </div>
             <label style="position: absolute;bottom:0px; font-size: 20px;">You had an account?</label>
-            <a href="signin.html" style="position: absolute;bottom:0px; font-size: 20px;right: 76.5%;">Sign In</a>
+            <a href="signin.html" style="position: fixed;bottom:0px; font-size: 20px;transform: translateX(340%);">Sign In</a>
         </div>
         <script src="account.js"></script>
     </body>

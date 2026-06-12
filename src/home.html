@@ -15,7 +15,17 @@
             <img src="https://as2.ftcdn.net/jpg/04/62/63/65/1000_F_462636502_9cDAYuyVvBY4qYJlHjW7vqar5HYS8h8x.jpg" width="50px" height="50px" style="border-radius: 25px;">
             <label style="position: relative;top:-15px; color:white;font-size: 20px;" id="show_username">Guest</label>
         </button>
+        <div class="option_button_acc">
+            <button type="button" class="sign_acc" id="id_sign_acc">Non-identify Account</button>
+            <button type="button" class="sign_acc">About</button>
+        </div>
+        <div class="note_log_out">
+            <label style="font-size: 25px;"><b>Are you sure to login out your account?</b></label><br>
+            <button type="button" class="note_button_log_out" id="id_note_login_out_yes">Yes, I sure to login out</button>
+            <button type="button" class="note_button_log_out" id="id_note_login_out_no">No, I don't login out</button>
+        </div>
     </div>
+    
 </body>
 <script src="CPE.js"></script>
 <style>
@@ -42,6 +52,7 @@
         border-radius: 16px;
         outline: none;
         border: none;
+        padding: 10px;
     }
     .home{
         position: relative;
@@ -79,10 +90,83 @@
         height: 80px;
         background-color: rgb(4, 110, 250);
         left:40%;
-        
+        transition: 0.3s;
     }
     .button_acc:hover{
         background-color: rgba(4, 160, 250, 0.329);
+        
     }
+    
+    .option_button_acc{
+        transition: 0.3s;
+        position: relative;
+        background-color: rgba(186, 196, 201, 0.945);
+        backdrop-filter: blur(10px);
+        width: 280px;
+        height: fit-content;
+
+        left:84%;
+        top:-20%;
+
+        padding: 10px;
+
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        display:none;
+    }
+    .button_acc:hover + .option_button_acc{
+        display:block;
+        transition: 0.3s;
+    }
+    .option_button_acc:hover{
+        display: block;
+    }
+    .sign_acc{
+        border: none;
+        padding:10px;
+        width: 100%;
+        text-align: left;
+        color:white;
+        background-color: rgba(186, 196, 201, 0.945);
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    .sign_acc:hover{
+        background-color: rgba(81, 231, 236, 0.658);
+        color:black;
+        font-size:18px;
+    }
+
+    .note_log_out{
+        display:none;
+        background-color: rgba(186, 196, 201, 0.945);
+        border-radius: 10px;
+        padding:100px;
+        border: 5px dashed red;
+        width: 465px;
+        position: fixed;
+        top: 20%;
+        transform: translateY(50%);
+        left:35%;
+    }
+    .note_button_log_out{
+        border:none;
+        background-color: rgba(186, 196, 201, 0.945);
+        margin-top:20px;
+        font-size: 15px;
+        padding: 15px;
+        width: 230px;
+        transition: 0.3s;
+    }
+    .note_button_log_out:hover{
+        background-color: rgba(81, 231, 236, 0.658);
+        
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    
+
 </style>
 </html>

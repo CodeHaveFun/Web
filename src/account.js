@@ -68,12 +68,21 @@ function SignUp() {
 // --- SIGN IN --- | Check Account and login
 function SignIn(){
     var info_results = getValueInfo();
-    if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
-        document.getElementById("error_info_text").textContent = "Incorrect! Check again your username, email, password.";
+    
+    // Kiểm tra empty
+    if(info_results.Username == "" || info_results.Email == "" || info_results.Password == ""){
+        document.getElementById("error_info_text").textContent = "Please fill all fields!";
         return;
-    }else{
-        document.getElementById("error_info_text").textContent = "";
     }
-    sessionStorage.setItem("User_account",info_results.Username); // save session user account temp on Browser
-    window.location.href = "home.html";
+    
+    // Nếu CheckAccount trả về TRUE (tìm thấy) -> cho đăng nhập
+    if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
+        //  ĐÚNG TÀI KHOẢN -> cho đăng nhập
+        document.getElementById("error_info_text").textContent = "";
+        sessionStorage.setItem("User_account", info_results.Username);
+        window.location.href = "home.html";
+    } else {
+        // SAI TÀI KHOẢN -> báo lỗi
+        document.getElementById("error_info_text").textContent = "Incorrect! Check your username, email, password.";
+    }
 }
