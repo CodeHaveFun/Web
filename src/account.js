@@ -86,3 +86,7 @@ function SignIn(){
         document.getElementById("error_info_text").textContent = "Incorrect! Check your username, email, password.";
     }
 }
+function ModeGuestLoginIn(){
+    sessionStorage.setItem("User_account","");
+    window.location.href="home.html";
+}
