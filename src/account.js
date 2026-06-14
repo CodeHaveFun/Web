@@ -80,13 +80,133 @@ function SignIn(){
         //  ĐÚNG TÀI KHOẢN -> cho đăng nhập
         document.getElementById("error_info_text").textContent = "";
         sessionStorage.setItem("User_account", info_results.Username);
+        sessionStorage.setItem("User_email", info_results.Email);
+        sessionStorage.setItem("User_password",info_results.Password);
         window.location.href = "home.html";
     } else {
         // SAI TÀI KHOẢN -> báo lỗi
         document.getElementById("error_info_text").textContent = "Incorrect! Check your username, email, password.";
+        return;
     }
+    sessionStorage.removeItem("fullname");
+    sessionStorage.removeItem("phonenum");
+    sessionStorage.removeItem("date");
 }
 function ModeGuestLoginIn(){
     sessionStorage.setItem("User_account","");
     window.location.href="home.html";
+}
+
+
+function UpdateUsername(currentUsername, newUsername) {
+    //if(!currentUsername || !newUsername || newUsername.trim() === "") {
+        //return false;
+    //}
+    
+    //if(currentUsername === newUsername) {
+        //return false;
+    //}
+    
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    
+    // Kiểm tra username mới đã tồn tại
+    //for(var i = 0; i < accounts.length; i++) {
+        //if(accounts[i].username === newUsername) {
+            //return false;
+       //}
+    //}
+    
+    // Tìm và cập nhật
+    for(var i = 0; i < accounts.length; i++) {
+        if(accounts[i].username === currentUsername) {
+            accounts[i].username = newUsername;
+            localStorage.setItem("accounts", JSON.stringify(accounts));
+            sessionStorage.setItem("User_account", newUsername);
+            return true;
+        }
+    }
+    return false;
+}
+
+// ==================== HÀM CẬP NHẬT EMAIL====================
+function UpdateEmail(currentUsername, newEmail) {
+    //if(!currentUsername || !newEmail || newEmail.trim() === "") {
+        //return false;
+    //}
+    
+    // Kiểm tra định dạng email
+    //var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //if(!emailPattern.test(newEmail)) {
+        //return false;
+    //}
+    
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    var currentEmail = "";
+    
+    // Lấy email hiện tại
+    for(var i = 0; i < accounts.length; i++) {
+        if(accounts[i].username === currentUsername) {
+            currentEmail = accounts[i].email;
+            break;
+        }
+    }
+    
+    //if(currentEmail === newEmail) {
+        //return false;
+    //}
+    
+    // Kiểm tra email mới đã tồn tại
+    //for(var i = 0; i < accounts.length; i++) {
+        //if(accounts[i].email === newEmail) {
+            //return false;
+        //}
+    //}
+    
+    // Cập nhật email
+    for(var i = 0; i < accounts.length; i++) {
+        if(accounts[i].username === currentUsername) {
+            accounts[i].email = newEmail;
+            localStorage.setItem("accounts", JSON.stringify(accounts));
+            sessionStorage.setItem("User_email", newEmail);
+            return true;
+        }
+    }
+    return false;
+}
+
+// ==================== HÀM CẬP NHẬT PASSWORD  ====================
+function UpdatePassword(currentUsername, newPassword) {
+    //if(!currentUsername || !newPassword || newPassword.trim() === "") {
+        //return false;
+    //}
+    
+    //if(newPassword.length < 6) {
+        //return false;
+    //}
+    
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    var currentPassword = "";
+    
+    // Lấy mật khẩu hiện tại
+    for(var i = 0; i < accounts.length; i++) {
+        if(accounts[i].username === currentUsername) {
+            currentPassword = accounts[i].password;
+            break;
+        }
+    }
+    
+    //if(currentPassword === newPassword) {
+        //return false;
+    //}
+    
+    // Cập nhật mật khẩu
+    for(var i = 0; i < accounts.length; i++) {
+        if(accounts[i].username === currentUsername) {
+            accounts[i].password = newPassword;
+            localStorage.setItem("accounts", JSON.stringify(accounts));
+            sessionStorage.setItem("User_password", newPassword);
+            return true;
+        }
+    }
+    return false;
 }

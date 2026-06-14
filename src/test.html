@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Web Components - Demo</title>
+
+    <!-- 1. Theme CSS (bắt buộc) -->
+    <link href="https://cdn.jsdelivr.net/npm/@material/web@1.5.0/theme.css" rel="stylesheet">
+
+    <!-- 2. Font và Icon (khuyến nghị) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body style="font-family: 'Roboto', sans-serif; margin: 2rem; background-color: #f5f5f5;">
+    
+    <div style="max-width: 400px; margin: 0 auto; background: white; padding: 2rem; border-radius: 16px;">
+        <h2>Đăng nhập với Material</h2>
+
+        <!-- 3. Sử dụng component như thẻ HTML bình thường -->
+        <md-outlined-text-field 
+            label="Username" 
+            style="width: 100%; margin-bottom: 16px;">
+        </md-outlined-text-field>
+        
+        <md-outlined-text-field 
+            label="Email" 
+            type="email"
+            style="width: 100%; margin-bottom: 16px;">
+        </md-outlined-text-field>
+        
+        <md-filled-text-field 
+            label="Password" 
+            type="password"
+            style="width: 100%; margin-bottom: 24px;">
+        </md-filled-text-field>
+        
+        <md-filled-button style="width: 100%;">
+            Đăng nhập
+        </md-filled-button>
+    </div>
+
+    <!-- 4. Import component bằng JavaScript Module (bắt buộc) -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@material/web/": "https://cdn.jsdelivr.net/npm/@material/web@1.5.0/"
+            }
+        }
+    </script>
+    <script type="module">
+        import '@material/web/textfield/outlined-text-field.js';
+        import '@material/web/textfield/filled-text-field.js';
+        import '@material/web/button/filled-button.js';
+    </script>
+</body>
+</html>

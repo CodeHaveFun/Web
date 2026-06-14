@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="custome_acc.css">
     <title>Thienshop - Account</title>
 </head>
 <body>
@@ -11,24 +12,73 @@
         <div style="position: relative;background-color: white;height: 50px;width: 3px;border-radius: 5px;margin-left: 11%;margin-top: -1.5%;"></div>
         <label style="position: fixed;background-color: none;color:white;border-radius: 5px;margin-left: 12%;margin-top: -2.3%;font-size: 35px;">Account</label>
     </div>
-</body>
-<script src="CPE.js"></script>
-<style>
-    .header{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        background-color: rgb(4, 110, 250);
-        width: 100%;
-        height: 80px;
-    } 
-    .logo_header{
-        color: white;
-        position: relative;
-        top:20%;
-        left: 20px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 35px;
-    }
-    
+    <div style="display: flex;gap: 10px;height: 100%;">
+        <div class="option_menu">
+            <button class="elem_option" id="id_profile">Profile</button>
+            <button class="elem_option" id="id_privacy">Privacy and security</button>
+            <button class="elem_option" id="id_order">My order</button>
+            <button class="elem_option" id="id_cart">My cart</button>
+            <button class="elem_option" id="id_logout">Log out</button>
+            <button class="elem_option" id="id_del_acc">Delete this account</button>
+            <div style="width: 100%;background-color: rgba(128, 128, 128, 0.568);height: 5px;border-radius: 5px;"></div>
+            <button class="elem_option" onclick="window.location.href='home.html'">Go Back</button>
+        </div>
+        <div class="change_box_all" id="table_contain">
+            <!-- PROFILE -->
+            <div id="id_tag_profile">
+                <label style="font-size: 35px;font-weight: bold;">Profile</label>
+                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;margin-bottom: 20px;"></div>
+                <label style="font-size: 20px;">Your full name is: </label>
+                <input type="text" class="input_elem" placeholder="Full name (ex. Michel Robert)" id="full_name_user"><br>
+                <label style="font-size: 20px;">Username: </label>
+                <input type="text" class="input_elem" placeholder="Username" id="username"><br>
+                <label style="font-size: 20px;">E-mail: </label>
+                <input type="text" class="input_elem" placeholder="E-mail" id="email"><br>
+                <label style="font-size: 20px;">Number Phone: </label>
+                <input type="number" class="input_elem" placeholder="XXXXXXXXXX" id="phone"><br>
+                <label style="font-size: 20px;">Date of birth: </label>
+                <input type="date" class="input_elem" id="date"><br>
+                <button type="submit" id="profile_save" class="button_save">Save</button>
+                <label style="margin-left: 20px;color:red;font-size: 20px;">NOTE: If you change profile and save, thienshop will auto <b>LOG OUT</b> and you have to sign in again.</label>
+            </div>
 
-</style>
+            <!-- PRICAVY & SECURITY -->
+            <div id="id_tag_privacy">
+                <label style="font-size: 35px;font-weight: bold;">Privacy and security</label>
+                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;margin-bottom: 20px;"></div>
+                <button class="button_elem_2" id="button_pass_change">Change your password</button>
+                <div class="line_ele" id="line_ele"></div>
+                <div class="contain_pass" id="contain_pass">
+                    <label for="old_pass" class="label_pass">Your old password: </label><br>
+                    <input type="password" id="old_pass" class="elem_change_pass"><br>
+                    <label for="new_pass" class="label_pass">Your new password: </label><br>
+                    <input type="password" id="new_pass" class="elem_change_pass"><br>
+                </div>
+            </div>
+            <!-- ORDER -->
+            <div id="id_tag_order">
+                <label style="font-size: 35px;font-weight: bold;">My order</label>
+                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
+            </div>
+            <!-- CART -->
+            <div id="id_tag_cart">
+                <label style="font-size: 35px;font-weight: bold;">My cart</label>
+                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
+            </div>
+            <!-- LOG OUT -->
+            <div id="id_tag_logout">
+                <label style="font-size: 35px;font-weight: bold;color:red;">Log out</label>
+                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
+            </div>
+            <!-- DELETE THIS ACCOUNT -->
+            <div id="id_tag_dell_acc">
+                <label style="font-size: 35px;font-weight: bold;color:red;">Delete this account</label>
+                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="account.js"></script>
+<script src="change_info.js"></script>
 </html>

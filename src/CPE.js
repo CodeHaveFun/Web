@@ -65,3 +65,4 @@ document.getElementById("id_note_login_out_no").addEventListener("click", functi
 account_set.addEventListener("click", function(){
     window.location.href="custome_acc.html";
 })
+
