@@ -8,96 +8,6 @@ Sign IN -> Get value -> Program open file .json (file saves accounts) -> Check a
                                                                     IF INCORRECT -> Return error login
                                                                     IF CORRECT -> Allow continue
 */
-// func get value 
-function getValueInfo(){
-    var value_username = document.getElementById('username').value;
-    var value_email = document.getElementById('email').value;
-    var value_password = document.getElementById('password').value;
-    return{
-        Username: value_username,
-        Email: value_email,
-        Password: value_password
-    };
-}
-function CheckAccount(username, email, password) {
-
-    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
-    
- 
-    for (var i = 0; i < accounts.length; i++) {
-        if (accounts[i].username === username && accounts[i].email == email && accounts[i].password === password) {
-            return true; 
-        }
-    }
-    return false; 
-}
-// --- SIGN UP --- | Create Account
-function SignUp() {
-    var info_results = getValueInfo();
-    
-    if(info_results.email == "" || info_results.Password == "" || info_results.Username == ""){
-        document.getElementById("error_info_text").textContent="Invalid! Check again your information.";
-        return;
-    }else{
-        document.getElementById("error_info_text").textContent="";
-    }
-
-    if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
-        document.getElementById("error_info_text").textContent="Invalid! Username, E-mail, Password of other account already exists.";
-        return;
-    }else{
-        document.getElementById("error_info_text").textContent="";
-    }
-    var newAccount = {
-        username: info_results.Username,
-        email: info_results.Email,
-        password: info_results.Password
-    };
-    
-
-    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
-    //                  
-    accounts.push(newAccount);
-    
-
-    localStorage.setItem("accounts", JSON.stringify(accounts));
-    
-    alert("Successfully created your account! Let's sign in.");
-    window.location.href="signin.html";
-}
-// --- SIGN IN --- | Check Account and login
-function SignIn(){
-    var info_results = getValueInfo();
-    
-    // Kiểm tra empty
-    if(info_results.Username == "" || info_results.Email == "" || info_results.Password == ""){
-        document.getElementById("error_info_text").textContent = "Please fill all fields!";
-        return;
-    }
-    
-    // Nếu CheckAccount trả về TRUE (tìm thấy) -> cho đăng nhập
-    if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
-        //  ĐÚNG TÀI KHOẢN -> cho đăng nhập
-        document.getElementById("error_info_text").textContent = "";
-        sessionStorage.setItem("User_account", info_results.Username);
-        sessionStorage.setItem("User_email", info_results.Email);
-        sessionStorage.setItem("User_password",info_results.Password);
-        window.location.href = "home.html";
-    } else {
-        // SAI TÀI KHOẢN -> báo lỗi
-        document.getElementById("error_info_text").textContent = "Incorrect! Check your username, email, password.";
-        return;
-    }
-    sessionStorage.removeItem("fullname");
-    sessionStorage.removeItem("phonenum");
-    sessionStorage.removeItem("date");
-}
-function ModeGuestLoginIn(){
-    sessionStorage.setItem("User_account","");
-    window.location.href="home.html";
-}
-
-
 function UpdateUsername(currentUsername, newUsername) {
     //if(!currentUsername || !newUsername || newUsername.trim() === "") {
         //return false;
@@ -210,3 +120,158 @@ function UpdatePassword(currentUsername, newPassword) {
     }
     return false;
 }
+function UpdateFullname(username,newname){
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    var curname = "";
+    for(var i = 0; i < accounts.length; i++){
+        if(accounts[i].username === username){
+            curname = accounts[i].fullname;
+            break;
+        }
+    }
+    for(var i = 0; i < accounts.length; i++){
+        if(accounts[i].username === username){
+           accounts[i].fullname = newname;
+            localStorage.setItem("accounts", JSON.stringify(accounts));
+            sessionStorage.setItem("fullname", newname);
+            return true;
+        }
+    }
+    return false;
+}
+function UpdatePhonenum(username,newphone){
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    var curphone = "";
+    for(var i = 0; i < accounts.length; i++){
+        if(accounts[i].username === username){
+            curphone = accounts[i].phonenum;
+            break;
+        }
+    }
+    for(var i = 0; i < accounts.length; i++){
+        if(accounts[i].username === username){
+           accounts[i].phonenum = newphone;
+            localStorage.setItem("accounts", JSON.stringify(accounts));
+            sessionStorage.setItem("phonenum", newphone);
+            return true;
+        }
+    }
+    return false;
+}
+function UpdateDate(username,newdate){
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    var curdate = "";
+    for(var i = 0; i < accounts.length; i++){
+        if(accounts[i].username === username){
+            curdate = accounts[i].date;
+            break;
+        }
+    }
+    for(var i = 0; i < accounts.length; i++){
+        if(accounts[i].username === username){
+           accounts[i].date = newdate;
+            localStorage.setItem("accounts", JSON.stringify(accounts));
+            sessionStorage.setItem("date", newdate);
+            return true;
+        }
+    }
+    return false;
+}
+// func get value 
+function getValueInfo(){
+    var value_username = document.getElementById('username').value;
+    var value_email = document.getElementById('email').value;
+    var value_password = document.getElementById('password').value;
+    return{
+        Username: value_username,
+        Email: value_email,
+        Password: value_password
+    };
+}
+function CheckAccount(username, email, password) {
+
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    
+ 
+    for (var i = 0; i < accounts.length; i++) {
+        if (accounts[i].username === username && accounts[i].email == email && accounts[i].password === password) {
+            return true; 
+        }
+    }
+    return false; 
+}
+// --- SIGN UP --- | Create Account
+function SignUp() {
+    var info_results = getValueInfo();
+    
+    if(info_results.email == "" || info_results.Password == "" || info_results.Username == ""){
+        document.getElementById("error_info_text").textContent="Invalid! Check again your information.";
+        return;
+    }else{
+        document.getElementById("error_info_text").textContent="";
+    }
+
+    if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
+        document.getElementById("error_info_text").textContent="Invalid! Username, E-mail, Password of other account already exists.";
+        return;
+    }else{
+        document.getElementById("error_info_text").textContent="";
+    }
+    var newAccount = {
+        username: info_results.Username,
+        email: info_results.Email,
+        password: info_results.Password,
+        fullname: "",
+        phonenum: "",
+        date: ""    
+    };
+    
+
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    //                  
+    accounts.push(newAccount);
+    
+
+    localStorage.setItem("accounts", JSON.stringify(accounts));
+    
+    alert("Successfully created your account! Let's sign in.");
+    window.location.href="signin.html";
+}
+// --- SIGN IN --- | Check Account and login
+function SignIn(){
+    var info_results = getValueInfo();
+    
+    // Kiểm tra empty
+    if(info_results.Username == "" || info_results.Email == "" || info_results.Password == ""){
+        document.getElementById("error_info_text").textContent = "Please fill all fields!";
+        return;
+    }
+    
+    // Nếu CheckAccount trả về TRUE (tìm thấy) -> cho đăng nhập
+    if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
+        //  ĐÚNG TÀI KHOẢN -> cho đăng nhập
+        document.getElementById("error_info_text").textContent = "";
+        sessionStorage.setItem("User_account", info_results.Username);
+        sessionStorage.setItem("User_email", info_results.Email);
+        sessionStorage.setItem("User_password",info_results.Password);
+        var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+        for(var i = 0; i < accounts.length; i++){
+            if(accounts[i].username === sessionStorage.getItem("User_account")){
+                UpdateFullname(sessionStorage.getItem("User_account"),accounts[i].fullname);
+                UpdatePhonenum(sessionStorage.getItem("User_account"),accounts[i].phonenum);
+                UpdateDate(sessionStorage.getItem("User_account"),accounts[i].date);
+                break;
+            }
+        }
+        window.location.href = "home.html";
+    } else {
+        // SAI TÀI KHOẢN -> báo lỗi
+        document.getElementById("error_info_text").textContent = "Incorrect! Check your username, email, password.";
+        return;
+    }
+}
+function ModeGuestLoginIn(){
+    sessionStorage.setItem("User_account","");
+    window.location.href="home.html";
+}
+

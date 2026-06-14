@@ -13,11 +13,11 @@
             <label style="position: relative;font-family: Arial, Helvetica, sans-serif; text-align: center;font-size: 40px; top:-18%;left:0%;"><b>Sign In to Thienshop</b></label>
             
             <div style="text-align: center; background-color: white; position: absolute; right: 35%; bottom: 32%;">
-                <label for="username" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;">Username</label><br>
+                <label for="username" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;" id="label_input">Username</label><br>
                 <input id="username" type="text" placeholder="Username" class="enter_box"><br>
-                <label for="email" class="label_box" style="position: fixed;transform: translateX(-240%) translateY(40%);background-color: white;width: 60px;">E-mail</label><br>
+                <label for="email" class="label_box" style="position: fixed;transform: translateX(-240%) translateY(40%);background-color: white;width: 60px;" id="label_input">E-mail</label><br>
                 <input id ="email" type="text" placeholder="E-mail (ex: account@gmail.com)" class ="enter_box"><br>
-                <label for="password" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;">Password</label><br>
+                <label for="password" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;" id="label_input">Password</label><br>
                 <input type="password" placeholder="Password" class="enter_box" id="password"><br>
                 <a href="" style="position: relative; right: 90px;">Forget your password?</a>
                 <button type="submit" style="position: fixed; height: 70px; width: 325px;transform: translateX(-73%) translateY(40%);background-color: royalblue;border-color: royalblue;color: white;font-size: 20px;" onclick="SignIn()">SIGN IN</button>
@@ -83,6 +83,8 @@
             padding-left: 20px;
 
         }
-
+        .enter_box:focus{
+            outline-color: rgb(0, 89, 255);
+        }
     </style>
 </html>

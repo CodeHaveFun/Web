@@ -90,6 +90,16 @@ if(id_del_acc) {
 // --------------- PROFILE TAG ------------------
 document.getElementById("profile_save").addEventListener("click", function(){
 
+    if(document.getElementById("full_name_user").value != sessionStorage.getItem("fullname")){
+    UpdateFullname(sessionStorage.getItem("User_account"),document.getElementById("full_name_user").value);
+    }
+
+    if(document.getElementById("phone").value != sessionStorage.getItem("phonenum")){
+    UpdatePhonenum(sessionStorage.getItem("User_account"),document.getElementById("phone").value);
+    }
+    if(document.getElementById("date").value != sessionStorage.getItem("date")){
+     UpdateDate(sessionStorage.getItem("User_account"),document.getElementById("date").value);
+    }
     
     if(document.getElementById("username").value != sessionStorage.getItem("User_account")){
         UpdateUsername(sessionStorage.getItem("User_account"),document.getElementById("username").value);
@@ -99,9 +109,9 @@ document.getElementById("profile_save").addEventListener("click", function(){
         UpdateEmail(document.getElementById("username").value,document.getElementById("email").value);
 
     }
-    sessionStorage.setItem("fullname",document.getElementById("full_name_user").value);
-    sessionStorage.setItem("phonenum",document.getElementById("phone").value);
-    sessionStorage.setItem("date",document.getElementById("date").value);
+    //sessionStorage.setItem("fullname",document.getElementById("full_name_user").value);
+    //sessionStorage.setItem("phonenum",document.getElementById("phone").value);
+    //sessionStorage.setItem("date",document.getElementById("date").value);
     window.location.href="signin.html";
 });
 
