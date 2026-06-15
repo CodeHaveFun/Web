@@ -1,0 +1,143 @@
+.header{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(4, 110, 250);
+        width: 100%;
+        height: 80px;
+    } 
+    .logo_header{
+        color: white;
+        position: relative;
+        top:-20%;
+        left: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 35px;
+    }
+    .box_search{
+        position: relative;
+        top:-20%;  
+        left:25%;
+        width: 10cm;
+        height: 1cm;
+        border-radius: 16px;
+        outline: none;
+        border: none;
+        padding: 10px;
+    }
+    .home{
+        position: relative;
+        top:-20%;
+        margin-left: 5%;
+        color:white;
+        background-color: rgb(4, 110, 250);
+        border: none;
+        transition: 0.3s;
+        font-size:20px;
+        height: 80px;
+        width: 100px;
+    }
+    .home:hover{
+        background-color: rgba(4, 160, 250, 0.329);
+    }
+    .sales{
+        position: relative;
+        top:-20%;
+        margin-left: auto;
+        color:white;
+        background-color: rgb(4, 110, 250);
+        border: none;
+        transition: 0.3s;
+        font-size: 20px;
+        height: 80px;
+        width: 100px;
+    }
+    .sales:hover{
+        background-color: rgba(4, 160, 250, 0.329);
+    }
+    .button_acc{
+        position: relative;
+        border: none;
+        height: 80px;
+        background-color: rgb(4, 110, 250);
+        left:40%;
+        transition: 0.3s;
+    }
+    .button_acc:hover{
+        background-color: rgba(4, 160, 250, 0.329);
+        
+    }
+    
+    .option_button_acc{
+        transition: 0.3s;
+        position: relative;
+        background-color: white;
+        backdrop-filter: blur(10px);
+        width: 280px;
+        height: fit-content;
+        border: 1px solid rgb(41, 41, 41);
+        border-top-color: white;
+        left:84%;
+        top:-20%;
+
+        padding: 10px;
+
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 0 15px 5px rgba(36, 36, 36, 0.342);
+        display:none;
+    }
+    .button_acc:hover + .option_button_acc{
+        display:block;
+        transition: 0.3s;
+    }
+    .option_button_acc:hover{
+        display: block;
+    }
+    .sign_acc{
+        border: none;
+        padding:10px;
+        margin-top: 5px;
+        width: 100%;
+        text-align: left;
+        color:black;
+        background-color: none;
+        font-size: 16px;
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    .sign_acc:hover{
+        background-color: rgba(173, 173, 173, 0.699);
+        color:black;
+        font-weight: bold;
+        font-size:19px;
+    }
+
+    .note_log_out{
+        display:none;
+        background-color: rgba(186, 196, 201, 0.945);
+        border-radius: 10px;
+        padding:100px;
+        border: 5px dashed red;
+        width: 465px;
+        position: fixed;
+        top: 20%;
+        transform: translateY(50%);
+        left:35%;
+    }
+    .note_button_log_out{
+        border:2px dashed black;
+        background-color: rgba(186, 196, 201, 0.945);
+        margin-top:20px;
+        font-size: 15px;
+        padding: 15px;
+        width: 230px;
+        transition: 0.3s;
+    }
+    .note_button_log_out:hover{
+        background-color: rgba(81, 231, 236, 0.658);
+        color:blue;
+        font-size: 18px;
+        font-weight: bold;
+        border:2px dashed red;
+        border-radius: 5px;
+    }
+    

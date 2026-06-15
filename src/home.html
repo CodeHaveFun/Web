@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thienshop - Home</title>
+    <link rel="stylesheet" href="home_style_header.css">
+    <link rel="stylesheet" href="home_style_body.css">
 </head>
 <body>
     <div class="header">
@@ -13,7 +15,7 @@
         <input type="search" class="box_search" placeholder="Search for products,...">
         <button class="button_acc">
             <img src="https://as2.ftcdn.net/jpg/04/62/63/65/1000_F_462636502_9cDAYuyVvBY4qYJlHjW7vqar5HYS8h8x.jpg" width="50px" height="50px" style="border-radius: 25px;">
-            <label style="position: relative;top:-15px; color:white;font-size: 20px;" id="show_username">Guest</label>
+            <label style="position: relative;top:-15px; color:white;font-size: 20px;" id="show_username"></label>
         </button>
         <div class="option_button_acc">
             <button type="button" class="sign_acc" id="id_account">My account</button>
@@ -26,150 +28,25 @@
             <button type="button" class="note_button_log_out" id="id_note_login_out_no">No, I don't login out</button>
         </div>
     </div>
+    <div class="main_body">
+        <div class="indu_start">
+            <div id="label_image_1">
+                <label id="label1_image_1">Let's start with Thienshop</label><br>
+                <label id="label2_image_1">Crafting Performance</label><br>
+                <label id="label3_image_1">Empowering Every Build</label>
+            </div>
+            <img src="data/image2_main_body.jpg" width="950px" id="image_1">
+        </div>
+        <div class="suggest_product">
+            <div class="title_head"><label>Suggested products | <b>RAM</b></label></div>
+            <div class="ele_suggest" id="sug_ram"></div>
+            <div class="title_head"><label>Suggested products | <b>CPU</b></label></div>
+            <div class="ele_suggest" id="sug_cpu"></div>
+        </div>
+    </div>
     
 </body>
+<script src="data/CPU_product_suggest.js"></script>
+<script src="data/RAM_product_suggest.js"></script>
 <script src="CPE.js"></script>
-<style>
-    .header{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        background-color: rgb(4, 110, 250);
-        width: 100%;
-        height: 80px;
-    } 
-    .logo_header{
-        color: white;
-        position: relative;
-        top:-20%;
-        left: 20px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 35px;
-    }
-    .box_search{
-        position: relative;
-        top:-20%;  
-        left:25%;
-        width: 10cm;
-        height: 1cm;
-        border-radius: 16px;
-        outline: none;
-        border: none;
-        padding: 10px;
-    }
-    .home{
-        position: relative;
-        top:-20%;
-        margin-left: 5%;
-        color:white;
-        background-color: rgb(4, 110, 250);
-        border: none;
-        transition: 0.3s;
-        font-size:20px;
-        height: 80px;
-        width: 100px;
-    }
-    .home:hover{
-        background-color: rgba(4, 160, 250, 0.329);
-    }
-    .sales{
-        position: relative;
-        top:-20%;
-        margin-left: auto;
-        color:white;
-        background-color: rgb(4, 110, 250);
-        border: none;
-        transition: 0.3s;
-        font-size: 20px;
-        height: 80px;
-        width: 100px;
-    }
-    .sales:hover{
-        background-color: rgba(4, 160, 250, 0.329);
-    }
-    .button_acc{
-        position: relative;
-        border: none;
-        height: 80px;
-        background-color: rgb(4, 110, 250);
-        left:40%;
-        transition: 0.3s;
-    }
-    .button_acc:hover{
-        background-color: rgba(4, 160, 250, 0.329);
-        
-    }
-    
-    .option_button_acc{
-        transition: 0.3s;
-        position: relative;
-        background-color: rgba(186, 196, 201, 0.945);
-        backdrop-filter: blur(10px);
-        width: 280px;
-        height: fit-content;
-
-        left:84%;
-        top:-20%;
-
-        padding: 10px;
-
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-
-        display:none;
-    }
-    .button_acc:hover + .option_button_acc{
-        display:block;
-        transition: 0.3s;
-    }
-    .option_button_acc:hover{
-        display: block;
-    }
-    .sign_acc{
-        border: none;
-        padding:10px;
-        width: 100%;
-        text-align: left;
-        color:white;
-        background-color: rgba(186, 196, 201, 0.945);
-        font-size: 15px;
-        transition: 0.3s;
-    }
-    .sign_acc:hover{
-        background-color: rgba(81, 231, 236, 0.658);
-        color:black;
-        font-weight: bold;
-        font-size:18px;
-    }
-
-    .note_log_out{
-        display:none;
-        background-color: rgba(186, 196, 201, 0.945);
-        border-radius: 10px;
-        padding:100px;
-        border: 5px dashed red;
-        width: 465px;
-        position: fixed;
-        top: 20%;
-        transform: translateY(50%);
-        left:35%;
-    }
-    .note_button_log_out{
-        border:2px dashed black;
-        background-color: rgba(186, 196, 201, 0.945);
-        margin-top:20px;
-        font-size: 15px;
-        padding: 15px;
-        width: 230px;
-        transition: 0.3s;
-    }
-    .note_button_log_out:hover{
-        background-color: rgba(81, 231, 236, 0.658);
-        color:blue;
-        font-size: 18px;
-        font-weight: bold;
-        border:2px dashed red;
-        border-radius: 5px;
-    }
-    
-
-</style>
 </html>

@@ -125,7 +125,8 @@ button_change_pass.addEventListener("click", function(){
     if(!c_click){
         ele_input_pass.style.display="flex";
         ele_line_pass.style.display="block";
-        button_change_pass.style.border="2px solid gray";
+        ele_line_pass.style.backgroundColor="rgb(0, 89, 255)";
+        button_change_pass.style.border="2px solid rgb(0, 89, 255)";
         button_change_pass.style.backgroundColor="rgba(173, 173, 173, 0.699)";
         button_change_pass.style.fontWeight="bold";
         c_click=true;
@@ -138,5 +139,4 @@ button_change_pass.addEventListener("click", function(){
         c_click=false;
     }
 });
-
 

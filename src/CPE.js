@@ -3,12 +3,42 @@
 
 let UpdateAcc; // khai báo bên ngoài để các hàm đều thấy
 var modeGuest = false;
-
-
+var imamge1_main_body = "https://tinyurl.com/3d6m4jfw"
 var account_set = document.getElementById("id_account");
 var car_set = document.getElementById("id_cart");
 
+function renderProductsRAM() {
+    const container = document.getElementById("sug_ram");
+    
+    container.innerHTML = ramProducts.map(product => `
+        <button class="sp_suggest">
+            <img id="img_suggest_show" src="${product.image}">
+            <div style="background-color: gray;width: 100%;height: 2px;border-radius: 10px;margin-bottom: 10px;"></div>
+            <label id="label_price">${product.price}</label>
+            <label id="info_sp">${product.name}</label>
+            <label id="check_sp">✔ In stock</label>
+        </button>
+    `).join('');
+}
+
+
+function renderProductsCPU() {
+    const container = document.getElementById("sug_cpu");
+    
+    container.innerHTML = CPUProducts.map(product => `
+        <button class="sp_suggest">
+            <img id="img_suggest_show" src="${product.image}">
+            <div style="background-color: gray;width: 100%;height: 2px;border-radius: 10px;margin-bottom: 10px;"></div>
+            <label id="label_price">${product.price}</label>
+            <label id="info_sp">${product.name}</label>
+            <label id="check_sp">✔ In stock</label>
+        </button>
+    `).join('');
+}
+
 document.addEventListener("DOMContentLoaded", function() {
+    renderProductsRAM();
+    renderProductsCPU();
     // Khởi tạo interval sau khi DOM load xong
     UpdateAcc = setInterval(() => {
         var info_acc = sessionStorage.getItem("User_account");

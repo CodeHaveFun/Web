@@ -275,3 +275,5 @@ function ModeGuestLoginIn(){
     window.location.href="home.html";
 }
 
+
+
