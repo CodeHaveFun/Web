@@ -158,6 +158,25 @@ function UpdatePhonenum(username,newphone){
     }
     return false;
 }
+function UpdateAddress(username,newaddress){
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    var curaddress = "";
+    for(var i = 0; i < accounts.length; i++){
+        if(accounts[i].username === username){
+            curaddress = accounts[i].address;
+            break;
+        }
+    }
+    for(var i = 0; i < accounts.length; i++){
+        if(accounts[i].username === username){
+           accounts[i].address = newaddress;
+            localStorage.setItem("accounts", JSON.stringify(accounts));
+            sessionStorage.setItem("address", newaddress);
+            return true;
+        }
+    }
+    return false;
+}
 function UpdateDate(username,newdate){
     var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
     var curdate = "";
@@ -200,6 +219,18 @@ function CheckAccount(username, email, password) {
     }
     return false; 
 }
+function ComparePassword(username_now,password_check){
+    var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+
+    for(var i =0; i < accounts.length; i++){
+        if(accounts[i].username === username_now){
+            if(accounts[i].password === password_check){
+                return true;
+            }
+        }
+    }
+    return false;
+}
 // --- SIGN UP --- | Create Account
 function SignUp() {
     var info_results = getValueInfo();
@@ -223,7 +254,8 @@ function SignUp() {
         password: info_results.Password,
         fullname: "",
         phonenum: "",
-        date: ""    
+        date: "",
+        address: ""    
     };
     
 
@@ -254,12 +286,14 @@ function SignIn(){
         sessionStorage.setItem("User_account", info_results.Username);
         sessionStorage.setItem("User_email", info_results.Email);
         sessionStorage.setItem("User_password",info_results.Password);
+        
         var accounts = JSON.parse(localStorage.getItem("accounts")) || [];
         for(var i = 0; i < accounts.length; i++){
             if(accounts[i].username === sessionStorage.getItem("User_account")){
                 UpdateFullname(sessionStorage.getItem("User_account"),accounts[i].fullname);
                 UpdatePhonenum(sessionStorage.getItem("User_account"),accounts[i].phonenum);
                 UpdateDate(sessionStorage.getItem("User_account"),accounts[i].date);
+                UpdateAddress(sessionStorage.getItem("address"), accounts[i].address);
                 break;
             }
         }

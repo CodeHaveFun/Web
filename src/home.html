@@ -6,6 +6,7 @@
     <title>Thienshop - Home</title>
     <link rel="stylesheet" href="home_style_header.css">
     <link rel="stylesheet" href="home_style_body.css">
+    <link rel="stylesheet" href="home_style_end.css">
 </head>
 <body>
     <div class="header">
@@ -22,11 +23,6 @@
             <button type="button" class="sign_acc" id="id_cart">My cart</button>
             <button type="button" class="sign_acc" id="id_sign_acc">Non-identify Account</button>
         </div>
-        <div class="note_log_out">
-            <label style="font-size: 25px;"><b>Are you sure to login out your account?</b></label><br>
-            <button type="button" class="note_button_log_out" id="id_note_login_out_yes">Yes, I sure to login out</button>
-            <button type="button" class="note_button_log_out" id="id_note_login_out_no">No, I don't login out</button>
-        </div>
     </div>
     <div class="main_body">
         <div class="indu_start">
@@ -42,10 +38,36 @@
             <div class="ele_suggest" id="sug_ram"></div>
             <div class="title_head"><label>Suggested products | <b>CPU</b></label></div>
             <div class="ele_suggest" id="sug_cpu"></div>
+            <div class="title_head"><label>Suggested products | <b>Case PC</b></label></div>
+            <div class="ele_suggest" id="sug_gpu"></div>
         </div>
+    </div>
+    <div class="end1">
+        <div class="inducend">
+            <label style="font-size: 25px;font-weight: bold;">Thienshop Technology Store</label>
+            <label>Store Address: So X, Phu Giao, Ho Chi Minh City, Vietnam</label>
+            <label>Phone Number: 09XXXXXXXX</label>
+            <label>E-mail: thienshopcontact@xxxxx.xxx</label>
+            <label>Website Address: https://thienshop.xxxx</label>
+            <label>Business license/Tax code: 082XXXXXXX</label>
+        </div>
+    </div>
+    <div class="end2">
+        <label style="margin-left: 100px;">Copyright © 2026 Thienshop</label>
+        <label style="margin-right: 100px;">Contact: Number phone: 09XXXXXXXX or E-mail: thienshopcontact@xxxx.xxx</label>
     </div>
     
 </body>
+<div class="note_log_out">
+    <div>
+        <label style="font-size: 25px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b>Are you sure to login out your account?</b></label>
+    </div>
+    <div>
+        <button type="button" class="note_button_log_out" id="id_note_login_out_yes">Yes, I sure to login out</button>
+        <button type="button" class="note_button_log_out" id="id_note_login_out_no">No, I don't login out</button>
+    </div>
+</div>
+<script src="data/CASE_product_suggest.js"></script>
 <script src="data/CPU_product_suggest.js"></script>
 <script src="data/RAM_product_suggest.js"></script>
 <script src="CPE.js"></script>

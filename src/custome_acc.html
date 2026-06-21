@@ -16,7 +16,6 @@
         <div class="option_menu">
             <button class="elem_option" id="id_profile">Profile</button>
             <button class="elem_option" id="id_privacy">Privacy and security</button>
-            <button class="elem_option" id="id_order">My order</button>
             <button class="elem_option" id="id_cart">My cart</button>
             <button class="elem_option" id="id_logout">Log out</button>
             <button class="elem_option" id="id_del_acc">Delete this account</button>
@@ -41,24 +40,29 @@
                 <button type="submit" id="profile_save" class="button_save">Save</button>
                 <label style="margin-left: 20px;color:red;font-size: 20px;">NOTE: If you change profile and save, thienshop will auto <b>LOG OUT</b> and you have to sign in again.</label>
             </div>
-
             <!-- PRICAVY & SECURITY -->
             <div id="id_tag_privacy">
                 <label style="font-size: 35px;font-weight: bold;">Privacy and security</label>
                 <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;margin-bottom: 20px;"></div>
-                <button class="button_elem_2" id="button_pass_change">Change your password</button>
-                <div class="line_ele" id="line_ele"></div>
-                <div class="contain_pass" id="contain_pass">
-                    <label for="old_pass" class="label_pass">Your old password: </label><br>
-                    <input type="password" id="old_pass" class="elem_change_pass"><br>
-                    <label for="new_pass" class="label_pass">Your new password: </label><br>
-                    <input type="password" id="new_pass" class="elem_change_pass"><br>
+                <div>
+                    <label id="navi_pass" for="button_pass_change">></label><button class="button_elem_2" id="button_pass_change">Change your password</button>
+                    <div class="contain" id="contain_pass">
+                        <label for="old_pass" class="label_pass">Your old password: </label><br>
+                        <input type="password" id="old_pass" class="elem_change_pass" placeholder="Your old password"><label style="color:red;font-size: 20px;margin-top: 10px;" id="warning_note"></label><br>
+                        <label for="new_pass" class="label_pass">Your new password: </label><br>
+                        <input type="password" id="new_pass" class="elem_change_pass" placeholder="Your new password"><label style="color:red;font-size: 20px;margin-top: 10px;" id="warning_note_1"></label><br>
+                    </div>
                 </div>
-            </div>
-            <!-- ORDER -->
-            <div id="id_tag_order">
-                <label style="font-size: 35px;font-weight: bold;">My order</label>
-                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
+                <br>
+                <div>
+                    <label id="navi_address" for="button_address_change">></label><button class="button_elem_2" id="button_address_change">Update your address</button>
+                    <div class="contain" id="contain_address">
+                        <label for="new_address" class="label_pass">Your address: </label><br>
+                        <input type="text" id="new_address" class="elem_change_pass" placeholder="Your new address"><label style="color:red;font-size: 20px;margin-top: 10px;" id="warning_address_note_1"></label><br>
+                    </div>
+                </div>
+                <br><button type="submit" id="privacy_save" class="button_save">Save</button>
+                <label style="margin-left: 20px;color:red;font-size: 20px;">NOTE: If you change pricavy & security and save, thienshop will auto <b>LOG OUT</b> and you have to sign in again.</label>
             </div>
             <!-- CART -->
             <div id="id_tag_cart">
@@ -69,6 +73,10 @@
             <div id="id_tag_logout">
                 <label style="font-size: 35px;font-weight: bold;color:red;">Log out</label>
                 <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
+                <div class="logout">
+                    <label id="label_log_out">Log out your account</label>
+                    <button id="log_out" class="button_log_out_tag">Log out</button>
+                </div>
             </div>
             <!-- DELETE THIS ACCOUNT -->
             <div id="id_tag_dell_acc">
@@ -76,7 +84,6 @@
                 <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
             </div>
         </div>
-
     </div>
 </body>
 <script src="account.js"></script>

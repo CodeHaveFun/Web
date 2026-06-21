@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Pliant:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+.end1{
+    margin-top: 200px;
+    color:white;
+    font-family: "Roboto Mono", monospace; 
+    background-color: rgba(68, 149, 255, 0.932);
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.end2{
+    background-color: rgb(11, 116, 253);
+    font-family: "Roboto Mono", monospace;
+    width: 100%;
+    height: fit-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.inducend{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+} 
