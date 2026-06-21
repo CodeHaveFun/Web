@@ -12,3 +12,7 @@
 - [x] Processed Event create account/ login in account
 - [x] Created Home Page with login user
 - [ ] Creating custome account in setting (IN PROCESSING)
+
+## Developer
+- @CodeHaveFun
+- @Thien
