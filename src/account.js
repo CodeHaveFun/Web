@@ -238,18 +238,16 @@ function ComparePassword(username_now,password_check){
 function SignUp() {
     var info_results = getValueInfo();
     
-    if(info_results.email == "" || info_results.Password == "" || info_results.Username == ""){
+    if(info_results.Email == "" || info_results.Password == "" || info_results.Username == ""){
         document.getElementById("error_info_text").textContent="Invalid! Check again your information.";
         return;
     }else{
         document.getElementById("error_info_text").textContent="";
     }
-    const email = info_results.email;
-    if(!email.endsWith(end_gmail)){
-        document.getElementById("error_info_text").textContent="Check again your email!";
+    const email = info_results.Email;
+    if(!email.includes("@gmail.com")){
+        document.getElementById("error_info_text").textContent = "Check again your email!";
         return;
-    }else{
-        document.getElementById("error_info_text").textContent="";
     }
 
     if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
