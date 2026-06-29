@@ -233,7 +233,7 @@ function ComparePassword(username_now,password_check){
         }
     }
     return false;
-}
+} 
 // --- SIGN UP --- | Create Account
 function SignUp() {
     var info_results = getValueInfo();
