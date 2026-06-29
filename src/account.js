@@ -285,7 +285,11 @@ function SignIn(){
         document.getElementById("error_info_text").textContent = "Please fill all fields!";
         return;
     }
-    
+    const email = info_results.Email;
+    if(!email.includes("@gmail.com")){
+        document.getElementById("error_info_text").textContent = "Check again your email!";
+        return;
+    }
     // Nếu CheckAccount trả về TRUE (tìm thấy) -> cho đăng nhập
     if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
         //  ĐÚNG TÀI KHOẢN -> cho đăng nhập
