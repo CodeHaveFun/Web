@@ -8,6 +8,9 @@ Sign IN -> Get value -> Program open file .json (file saves accounts) -> Check a
                                                                     IF INCORRECT -> Return error login
                                                                     IF CORRECT -> Allow continue
 */
+
+var end_gmail = "@gmail.com";
+
 function UpdateUsername(currentUsername, newUsername) {
     //if(!currentUsername || !newUsername || newUsername.trim() === "") {
         //return false;
@@ -241,6 +244,13 @@ function SignUp() {
     }else{
         document.getElementById("error_info_text").textContent="";
     }
+    const email = info_results.email;
+    if(!email.endsWith(end_gmail)){
+        document.getElementById("error_info_text").textContent="Check again your email!";
+        return;
+    }else{
+        document.getElementById("error_info_text").textContent="";
+    }
 
     if(CheckAccount(info_results.Username, info_results.Email, info_results.Password)){
         document.getElementById("error_info_text").textContent="Invalid! Username, E-mail, Password of other account already exists.";
@@ -266,7 +276,6 @@ function SignUp() {
 
     localStorage.setItem("accounts", JSON.stringify(accounts));
     
-    alert("Successfully created your account! Let's sign in.");
     window.location.href="signin.html";
 }
 // --- SIGN IN --- | Check Account and login
