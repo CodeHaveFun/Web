@@ -3,7 +3,7 @@ var table_contain = document.getElementById("table_contain");
 var id_tag_profile = document.getElementById("id_tag_profile");
 var id_tag_privacy = document.getElementById("id_tag_privacy");
 var id_tag_order = document.getElementById("id_tag_order");
-var id_tag_cart = document.getElementById("id_tag_cart");
+
 var id_tag_logout = document.getElementById("id_tag_logout");
 var id_tag_dell_acc = document.getElementById("id_tag_dell_acc");
 
@@ -11,7 +11,7 @@ var id_tag_dell_acc = document.getElementById("id_tag_dell_acc");
 var id_profile = document.getElementById("id_profile");
 var id_privacy = document.getElementById("id_privacy");
 var id_order = document.getElementById("id_order");
-var id_cart = document.getElementById("id_cart");
+
 var id_logout = document.getElementById("id_logout");
 var id_del_acc = document.getElementById("id_del_acc");
 
@@ -20,7 +20,6 @@ function hidden_all_tag() {
     if(id_tag_profile) id_tag_profile.style.display = "none";
     if(id_tag_privacy) id_tag_privacy.style.display = "none";
     if(id_tag_order) id_tag_order.style.display = "none";
-    if(id_tag_cart) id_tag_cart.style.display = "none";
     if(id_tag_logout) id_tag_logout.style.display = "none";
     if(id_tag_dell_acc) id_tag_dell_acc.style.display = "none";
 }
@@ -65,13 +64,6 @@ if(id_order) {
     });
 }
 
-if(id_cart) {
-    id_cart.addEventListener("click", function() {
-        hidden_all_tag();
-        table_contain.style.display = "block";
-        id_tag_cart.style.display = "block";
-    });
-}
 
 if(id_logout) {
     id_logout.addEventListener("click", function() {

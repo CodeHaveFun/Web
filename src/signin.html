@@ -1,90 +1,215 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>Thienshop - Sign In</title>
-    </head>
-    <body>
-        <div class="box_menu_sign_in" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-            <label style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;position: relative; top:-40%; right:-2%; font-size: 35px;"><b>thienshop</b></label>
-            <label style="position: relative;text-align: center;font-size: 30px;top:-20%;left:-8%;">What's new today?</label>
-            <label style="position: relative;font-family: Arial, Helvetica, sans-serif; text-align: center;font-size: 40px; top:-18%;left:0%;"><b>Sign In to Thienshop</b></label>
-            
-            <div style="text-align: center; background-color: white; position: absolute; right: 35%; bottom: 32%;">
-                <label for="username" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;" id="label_input">Username</label><br>
-                <input id="username" type="text" placeholder="Username" class="enter_box"><br>
-                <label for="email" class="label_box" style="position: fixed;transform: translateX(-240%) translateY(40%);background-color: white;width: 60px;" id="label_input">E-mail</label><br>
-                <input id ="email" type="text" placeholder="E-mail (ex: account@gmail.com)" class ="enter_box"><br>
-                <label for="password" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;" id="label_input">Password</label><br>
-                <input type="password" placeholder="Password" class="enter_box" id="password"><br>
-                <a href="" style="position: relative; right: 90px;">Forget your password?</a>
-                <button type="submit" style="position: fixed; height: 70px; width: 325px;transform: translateX(-73%) translateY(40%);background-color: royalblue;border-color: royalblue;color: white;font-size: 20px;" onclick="SignIn()">SIGN IN</button>
-                <label style="color: red;position: absolute; bottom: -56%; left: 0%;text-align: left;" id="error_info_text"></label>
-                <a href="javascript:void(0)" onclick="ModeGuestLoginIn()" style="position: fixed;margin-top: 5.5%;margin-left:-238px;">Sign in with guest mode</a>
-            </div>
-            <label style="position: absolute;bottom:0px; font-size: 20px;">You had not an account?</label>
-            <a href="signup.html" style="position: fixed;bottom:0px; font-size: 20px;transform: translateX(340%);">Sign Up</a>
-        </div>
-        <script src="account.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thienshop - Sign In</title>
     <style>
-        /* SOURCE CSS - */
-        *{
-            margin: 0;
-        }
-        html{
-            height: 100%;
-            
-        }
-        body{
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
             background-image: url('https://media.thuonghieucongluan.vn/uploads/2020/04/13/thay-vi-mua-sam-truc-tiep-nguoi-nguoi-dua-nhau-mua-sam-truc-tuyen-m-2020-02-11-141354-1586739049.png');
-            background-size: 100% auto;        /* Phủ kín toàn màn hình */
-            background-position: center;   /* Canh giữa */
-            background-repeat: no-repeat;  /* Không lặp */
-            background-attachment: fixed;    /* Cố định */
-            height: 100%;
-            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: stretch;
         }
-        .box_menu_sign_in{
-            
-            background-color: white;
-            width: 50%;
-            height: 100%;
-            position: relative;
+
+        /* === PANEL TRÁI === */
+        .panel {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            
-        }
-        .button_sign{
-            border-radius: 10px;
-            border: 2px solid blue;
-            width: 200px;
-            height: 30px;
-            text-align: center;
-            font-size: 15px;
-            background-color: blue;
-            border: 2px ridge blue;
-            color:white;
-            transition: 0.3s;
-        }
-        .button_sign:hover{
-            background-color: rgba(0, 26, 255, 0.685);
-            border: 2px ridge rgba(0, 26, 255, 0.685);
-            font-size: 22px;
+            padding: 48px 48px;
         }
 
-        .enter_box{
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: royalblue;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 32px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 32px;
+        }
+
+        /* === FORM === */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            width: 100%;
+            height: 48px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            padding: 0 16px;
+            font-size: 15px;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: royalblue;
+            box-shadow: 0 0 0 3px rgba(65,105,225,0.12);
+        }
+
+        .forgot {
+            display: block;
+            text-align: right;
+            font-size: 13px;
+            color: royalblue;
+            text-decoration: none;
+            margin-top: -12px;
+            margin-bottom: 24px;
+        }
+        .forgot:hover { text-decoration: underline; }
+
+        .btn-signin {
+            width: 100%;
             height: 50px;
-            width: 300px;
-            font-size: 15px;
-            padding-left: 20px;
-
+            background: royalblue;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            letter-spacing: 0.5px;
         }
-        .enter_box:focus{
-            outline-color: rgb(0, 89, 255);
+        .btn-signin:hover  { background: #2a52d6; }
+        .btn-signin:active { transform: scale(0.98); }
+
+        .error-text {
+            color: #e53e3e;
+            font-size: 13px;
+            margin-top: 8px;
+            min-height: 18px;
+        }
+
+        .divider {
+            text-align: center;
+            color: #aaa;
+            font-size: 13px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 42%;
+            height: 1px;
+            background: #eee;
+        }
+        .divider::before { left: 0; }
+        .divider::after  { right: 0; }
+
+        .btn-guest {
+            width: 100%;
+            height: 46px;
+            background: transparent;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .btn-guest:hover { border-color: royalblue; color: royalblue; background: #f0f4ff; }
+
+        .footer {
+            margin-top: 28px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: royalblue;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .footer a:hover { text-decoration: underline; }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            body { background: #fff; }
+
+            .panel {
+                max-width: 100%;
+                padding: 40px 24px;
+                min-height: 100vh;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .panel { padding: 32px 16px; }
+            .title  { font-size: 22px; }
         }
     </style>
+</head>
+<body>
+    <div class="panel">
+        <div class="logo">🛍️ thienshop</div>
+        <div class="tagline">What's new today?</div>
+        <div class="title">Sign in to Thienshop</div>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Enter your username">
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="account@gmail.com">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter your password">
+        </div>
+
+        <a href="#" class="forgot">Forgot your password?</a>
+
+        <button class="btn-signin" onclick="SignIn()">SIGN IN</button>
+        <div class="error-text" id="error_info_text"></div>
+
+        <div class="divider">or</div>
+
+        <button class="btn-guest" onclick="ModeGuestLoginIn()">👤 Sign in with guest mode</button>
+
+        <div class="footer">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <script src="account.js"></script>
+</body>
 </html>

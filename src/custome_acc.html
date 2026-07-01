@@ -7,85 +7,124 @@
     <title>Thienshop - Account</title>
 </head>
 <body>
-    <div class="header">
-        <label class="logo_header"><b>thienshop</b></label>
-        <div style="position: relative;background-color: white;height: 50px;width: 3px;border-radius: 5px;margin-left: 11%;margin-top: -1.5%;"></div>
-        <label style="position: fixed;background-color: none;color:white;border-radius: 5px;margin-left: 12%;margin-top: -2.3%;font-size: 35px;">Account</label>
-    </div>
-    <div style="display: flex;gap: 10px;height: 100%;">
-        <div class="option_menu">
-            <button class="elem_option" id="id_profile">Profile</button>
-            <button class="elem_option" id="id_privacy">Privacy and security</button>
-            <button class="elem_option" id="id_cart">My cart</button>
-            <button class="elem_option" id="id_logout">Log out</button>
-            <button class="elem_option" id="id_del_acc">Delete this account</button>
-            <div style="width: 100%;background-color: rgba(128, 128, 128, 0.568);height: 5px;border-radius: 5px;"></div>
-            <button class="elem_option" onclick="window.location.href='home.html'">Go Back</button>
-        </div>
-        <div class="change_box_all" id="table_contain">
-            <!-- PROFILE -->
-            <div id="id_tag_profile">
-                <label style="font-size: 35px;font-weight: bold;">Profile</label>
-                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;margin-bottom: 20px;"></div>
-                <label style="font-size: 20px;">Your full name is: </label>
-                <input type="text" class="input_elem" placeholder="Full name (ex. Michel Robert)" id="full_name_user"><br>
-                <label style="font-size: 20px;">Username: </label>
-                <input type="text" class="input_elem" placeholder="Username" id="username"><br>
-                <label style="font-size: 20px;">E-mail: </label>
-                <input type="text" class="input_elem" placeholder="E-mail" id="email"><br>
-                <label style="font-size: 20px;">Number Phone: </label>
-                <input type="number" class="input_elem" placeholder="XXXXXXXXXX" id="phone"><br>
-                <label style="font-size: 20px;">Date of birth: </label>
-                <input type="date" class="input_elem" id="date"><br>
-                <button type="submit" id="profile_save" class="button_save">Save</button>
-                <label style="margin-left: 20px;color:red;font-size: 20px;">NOTE: If you change profile and save, thienshop will auto <b>LOG OUT</b> and you have to sign in again.</label>
-            </div>
-            <!-- PRICAVY & SECURITY -->
-            <div id="id_tag_privacy">
-                <label style="font-size: 35px;font-weight: bold;">Privacy and security</label>
-                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;margin-bottom: 20px;"></div>
-                <div>
-                    <label id="navi_pass" for="button_pass_change">></label><button class="button_elem_2" id="button_pass_change">Change your password</button>
-                    <div class="contain" id="contain_pass">
-                        <label for="old_pass" class="label_pass">Your old password: </label><br>
-                        <input type="password" id="old_pass" class="elem_change_pass" placeholder="Your old password"><label style="color:red;font-size: 20px;margin-top: 10px;" id="warning_note"></label><br>
-                        <label for="new_pass" class="label_pass">Your new password: </label><br>
-                        <input type="password" id="new_pass" class="elem_change_pass" placeholder="Your new password"><label style="color:red;font-size: 20px;margin-top: 10px;" id="warning_note_1"></label><br>
-                    </div>
+
+<div class="header">
+    <label class="logo_header">🛍️ thienshop</label>
+    <span class="header_divider"></span>
+    <span class="header_title">Account</span>
+</div>
+
+<div class="acc_layout">
+    <!-- Sidebar -->
+    <aside class="option_menu">
+        <button class="elem_option" id="id_profile">👤 Profile</button>
+        <button class="elem_option" id="id_privacy">🔒 Privacy & Security</button>
+        <button class="elem_option" id="id_logout">🔴 Log out</button>
+        <button class="elem_option" id="id_del_acc">🗑️ Delete account</button>
+        <div class="menu_divider"></div>
+        <button class="elem_option" onclick="window.location.href='home.html'">← Go back</button>
+    </aside>
+
+    <!-- Content -->
+    <main class="change_box_all" id="table_contain">
+
+        <!-- PROFILE -->
+        <div id="id_tag_profile">
+            <h2 class="section_title">Profile</h2>
+            <div class="section_divider"></div>
+            <div class="form_grid">
+                <div class="field_group">
+                    <label for="full_name_user">Full name</label>
+                    <input type="text" class="input_elem" placeholder="Ex: Michel Robert" id="full_name_user">
                 </div>
-                <br>
-                <div>
-                    <label id="navi_address" for="button_address_change">></label><button class="button_elem_2" id="button_address_change">Update your address</button>
-                    <div class="contain" id="contain_address">
-                        <label for="new_address" class="label_pass">Your address: </label><br>
-                        <input type="text" id="new_address" class="elem_change_pass" placeholder="Your new address"><label style="color:red;font-size: 20px;margin-top: 10px;" id="warning_address_note_1"></label><br>
-                    </div>
+                <div class="field_group">
+                    <label for="username">Username</label>
+                    <input type="text" class="input_elem" placeholder="Username" id="username">
                 </div>
-                <br><button type="submit" id="privacy_save" class="button_save">Save</button>
-                <label style="margin-left: 20px;color:red;font-size: 20px;">NOTE: If you change pricavy & security and save, thienshop will auto <b>LOG OUT</b> and you have to sign in again.</label>
-            </div>
-            <!-- CART -->
-            <div id="id_tag_cart">
-                <label style="font-size: 35px;font-weight: bold;">My cart</label>
-                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
-            </div>
-            <!-- LOG OUT -->
-            <div id="id_tag_logout">
-                <label style="font-size: 35px;font-weight: bold;color:red;">Log out</label>
-                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
-                <div class="logout">
-                    <label id="label_log_out">Log out your account</label>
-                    <button id="log_out" class="button_log_out_tag">Log out</button>
+                <div class="field_group">
+                    <label for="email">E-mail</label>
+                    <input type="text" class="input_elem" placeholder="E-mail" id="email">
+                </div>
+                <div class="field_group">
+                    <label for="phone">Phone number</label>
+                    <input type="number" class="input_elem" placeholder="09XXXXXXXX" id="phone">
+                </div>
+                <div class="field_group">
+                    <label for="date">Date of birth</label>
+                    <input type="date" class="input_elem" id="date">
                 </div>
             </div>
-            <!-- DELETE THIS ACCOUNT -->
-            <div id="id_tag_dell_acc">
-                <label style="font-size: 35px;font-weight: bold;color:red;">Delete this account</label>
-                <div style="background-color: gray;width: 100%;height: 5px;border-radius: 5px;margin-top: 10px;"></div>
+            <div class="save_row">
+                <button type="submit" id="profile_save" class="button_save">💾 Save</button>
+                <p class="note_warn">⚠️ Saving profile will auto <b>log you out</b> — you'll need to sign in again.</p>
             </div>
         </div>
-    </div>
-</body>
+
+        <!-- PRIVACY & SECURITY -->
+        <div id="id_tag_privacy">
+            <h2 class="section_title">Privacy & Security</h2>
+            <div class="section_divider"></div>
+
+            <div class="accordion_item">
+                <div class="accordion_header">
+                    <span id="navi_pass">▶</span>
+                    <button class="button_elem_2" id="button_pass_change">Change your password</button>
+                </div>
+                <div class="contain" id="contain_pass">
+                    <div class="field_group">
+                        <label for="old_pass">Current password</label>
+                        <input type="password" id="old_pass" class="elem_change_pass" placeholder="Your current password">
+                        <span class="warn_inline" id="warning_note"></span>
+                    </div>
+                    <div class="field_group">
+                        <label for="new_pass">New password</label>
+                        <input type="password" id="new_pass" class="elem_change_pass" placeholder="Your new password">
+                        <span class="warn_inline" id="warning_note_1"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion_item">
+                <div class="accordion_header">
+                    <span id="navi_address">▶</span>
+                    <button class="button_elem_2" id="button_address_change">Update your address</button>
+                </div>
+                <div class="contain" id="contain_address">
+                    <div class="field_group">
+                        <label for="new_address">Address</label>
+                        <input type="text" id="new_address" class="elem_change_pass" placeholder="Your address">
+                        <span class="warn_inline" id="warning_address_note_1"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="save_row">
+                <button type="submit" id="privacy_save" class="button_save">💾 Save</button>
+                <p class="note_warn">⚠️ Saving will auto <b>log you out</b> — you'll need to sign in again.</p>
+            </div>
+        </div>
+
+        <!-- LOG OUT -->
+        <div id="id_tag_logout">
+            <h2 class="section_title danger_text">Log out</h2>
+            <div class="section_divider"></div>
+            <div class="logout_row">
+                <span>Log out your account</span>
+                <button id="log_out" class="button_log_out_tag">🔓 Log out</button>
+            </div>
+        </div>
+
+        <!-- DELETE ACCOUNT -->
+        <div id="id_tag_dell_acc">
+            <h2 class="section_title danger_text">Delete this account</h2>
+            <div class="section_divider"></div>
+            <p style="margin-top:16px;color:#666;">This action is permanent and cannot be undone.</p>
+        </div>
+
+    </main>
+</div>
+
 <script src="account.js"></script>
 <script src="change_info.js"></script>
+</body>
 </html>

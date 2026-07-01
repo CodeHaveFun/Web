@@ -1,92 +1,122 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Thienshop - Sign Up</title>
-    </head>
-    <body>
-        <div class="box_menu_sign_in" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;background-color: white;">
-            <label style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;position: relative; top:-40%; right:-2%; font-size: 35px;"><b>thienshop</b></label>
-            <label style="position: relative;text-align: center;font-size: 30px;top:-20%;left:-8%;">Let's go shopping! 🛒</label>
-            <label style="position: relative;font-family: Arial, Helvetica, sans-serif; text-align: center;font-size: 40px; top:-18%;left:0%;"><b>Sign Up to Thienshop</b></label>
-            
-            <div style="text-align: center; background-color: white; position: absolute; right: 35%; bottom: 32%;">
-                <label for="username" style="position: fixed;transform: translateX(-180%) translateY(40%);background-color: white;width: 80px;">Username</label><br>
-                <input id="username" type="text" placeholder="Username" class="enter_box"><br>
-
-                <label for="email" class="label_box" style="position: fixed;transform: translateX(-240%) translateY(40%);background-color: white;width: 60px;">E-mail</label><br>
-                <input id ="email" type="text" placeholder="E-mail (ex: account@gmail.com)" class ="enter_box"><br>
-
-                <label for="password" style="position: fixed;background-color: white;width: 80px;transform: translateX(-180%) translateY(40%);">Password</label><br>
-                
-                <input type="password" placeholder="Password" class="enter_box" id="password"><br>
-
-                <button style="position: fixed; height: 70px; width: 325px;transform: translateX(-50%) translateY(40%);background-color: royalblue;border-color: royalblue;color: white;font-size: 20px;" onclick="SignUp()" class="ani_button">SIGN UP</button>
-                <label style="color: red;position: absolute; bottom: -56%; left: 0%;text-align: left;" id="error_info_text"></label>
-                
-            </div>
-            <label style="position: absolute;bottom:0px; font-size: 20px;">You had an account?</label>
-            <a href="signin.html" style="position: fixed;bottom:0px; font-size: 20px;transform: translateX(340%);">Sign In</a>
-        </div>
-        <script src="account.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thienshop - Sign Up</title>
     <style>
-        /* SOURCE CSS - */
-        *{
-            margin: 0;
-        }
-        html{
-            height: 100%;
-            
-        }
-        body{
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
             background-image: url('https://images.pexels.com/photos/31266794/pexels-photo-31266794.jpeg');
-            background-size: 100% auto;        /* Phủ kín toàn màn hình */
-            background-position: center;   /* Canh giữa */
-            background-repeat: no-repeat;  /* Không lặp */
-            background-attachment: fixed;    /* Cố định */
-            height: 100%;
-            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: stretch;
         }
-        .box_menu_sign_in{
-            
-            background-color: white;
-            width: 50%;
-            height: 100%;
-            position: relative;
+
+        .panel {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            
-        }
-        .button_sign{
-            border-radius: 10px;
-            border: 2px solid blue;
-            width: 200px;
-            height: 30px;
-            text-align: center;
-            font-size: 15px;
-            background-color: blue;
-            border: 2px ridge blue;
-            color:white;
-            transition: 0.3s;
-        }
-        .button_sign:hover{
-            background-color: rgba(0, 26, 255, 0.685);
-            border: 2px ridge rgba(0, 26, 255, 0.685);
-            font-size: 22px;
+            padding: 48px;
         }
 
-        .enter_box{
+        .logo   { font-size: 28px; font-weight: 700; color: royalblue; margin-bottom: 8px; }
+        .tagline{ font-size: 16px; color: #888; margin-bottom: 32px; }
+        .title  { font-size: 28px; font-weight: 700; color: #1a1a2e; margin-bottom: 32px; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 6px;
+        }
+        .form-group input {
+            width: 100%;
+            height: 48px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            padding: 0 16px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus {
+            border-color: royalblue;
+            box-shadow: 0 0 0 3px rgba(65,105,225,0.12);
+        }
+
+        .btn-signup {
+            width: 100%;
             height: 50px;
-            width: 300px;
-            font-size: 15px;
-            padding-left: 20px;
-
+            background: royalblue;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 8px;
         }
-        .ani_butoon:hover{
-            background-color: rgba(42, 64, 129, 0.911);
+        .btn-signup:hover  { background: #2a52d6; }
+        .btn-signup:active { transform: scale(0.98); }
+
+        .error-text { color: #e53e3e; font-size: 13px; margin-top: 8px; min-height: 18px; }
+
+        .footer { margin-top: 28px; text-align: center; font-size: 14px; color: #666; }
+        .footer a { color: royalblue; font-weight: 600; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            body { background: #fff; }
+            .panel { max-width: 100%; padding: 40px 24px; }
+        }
+        @media (max-width: 400px) {
+            .panel { padding: 32px 16px; }
+            .title { font-size: 22px; }
         }
     </style>
+</head>
+<body>
+    <div class="panel">
+        <div class="logo">🛍️ thienshop</div>
+        <div class="tagline">Let's go shopping! 🛒</div>
+        <div class="title">Sign up to Thienshop</div>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Enter your username">
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="account@gmail.com">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter your password">
+        </div>
+
+        <button class="btn-signup" onclick="SignUp()">SIGN UP</button>
+        <div class="error-text" id="error_info_text"></div>
+
+        <div class="footer">
+            Already have an account? <a href="signin.html">Sign In</a>
+        </div>
+    </div>
+
+    <script src="account.js"></script>
+</body>
 </html>

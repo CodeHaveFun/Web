@@ -9,66 +9,75 @@
     <link rel="stylesheet" href="home_style_end.css">
 </head>
 <body>
-    <div class="header">
-        <label class="logo_header"><b>thienshop</b></label>
+
+<div class="header">
+    <label class="logo_header">🛍️ thienshop</label>
+    <nav class="button_navi">
         <button class="home">Home</button>
-        <button class="sales">Sales</button>
-        <input type="search" class="box_search" placeholder="Search for products,...">
-        <button class="button_acc">
-            <img src="https://as2.ftcdn.net/jpg/04/62/63/65/1000_F_462636502_9cDAYuyVvBY4qYJlHjW7vqar5HYS8h8x.jpg" width="50px" height="50px" style="border-radius: 25px;">
-            <label style="position: relative;top:-15px; color:white;font-size: 20px;" id="show_username"></label>
+        <button class="sales">Product</button>
+        <button class="sales">Contact</button>
+    </nav>
+    <div class="header_right">
+        <button class="button_acc" id="btn_acc_toggle">
+            <img src="https://as2.ftcdn.net/jpg/04/62/63/65/1000_F_462636502_9cDAYuyVvBY4qYJlHjW7vqar5HYS8h8x.jpg" alt="avatar">
+            <span id="show_username"></span>
         </button>
-        <div class="option_button_acc">
-            <button type="button" class="sign_acc" id="id_account">My account</button>
-            <button type="button" class="sign_acc" id="id_cart">My cart</button>
-            <button type="button" class="sign_acc" id="id_sign_acc">Non-identify Account</button>
+        <div class="option_button_acc" id="acc_dropdown">
+            <button type="button" class="sign_acc" id="id_account">👤 My account</button>
+            <button type="button" class="sign_acc" id="id_cart">🛒 Cart</button>
+            <button type="button" class="sign_acc" id="id_sign_acc">🔓 Sign in</button>
         </div>
     </div>
-    <div class="main_body">
-        <div class="indu_start">
-            <div id="label_image_1">
-                <label id="label1_image_1">Let's start with Thienshop</label><br>
-                <label id="label2_image_1">Crafting Performance</label><br>
-                <label id="label3_image_1">Empowering Every Build</label>
-            </div>
-            <img src="data/image2_main_body.jpg" width="950px" id="image_1">
+</div>
+
+<div class="main_body">
+    <div class="indu_start">
+        <div id="label_image_1">
+            <label id="label1_image_1">Let's start with Thienshop 🚀</label>
         </div>
-        <div class="suggest_product">
-            <div class="title_head"><label>Suggested products | <b>RAM</b></label></div>
-            <div class="ele_suggest" id="sug_ram"></div>
-            <div class="title_head"><label>Suggested products | <b>CPU</b></label></div>
-            <div class="ele_suggest" id="sug_cpu"></div>
-            <div class="title_head"><label>Suggested products | <b>Case PC</b></label></div>
-            <div class="ele_suggest" id="sug_gpu"></div>
-        </div>
+        <img src="data/image2_main_body.jpg" id="image_1" alt="banner">
     </div>
+    <div class="suggest_product">
+        <div class="title_head">Suggested products | <b>RAM</b></div>
+        <div class="ele_suggest" id="sug_ram"></div>
+        <div class="title_head">Suggested products | <b>CPU</b></div>
+        <div class="ele_suggest" id="sug_cpu"></div>
+        <div class="title_head">Suggested products | <b>Case PC</b></div>
+        <div class="ele_suggest" id="sug_gpu"></div>
+    </div>
+</div>
+
+<footer>
     <div class="end1">
         <div class="inducend">
-            <label style="font-size: 25px;font-weight: bold;">Thienshop Technology Store</label>
-            <label>Store Address: So X, Phu Giao, Ho Chi Minh City, Vietnam</label>
-            <label>Phone Number: 09XXXXXXXX</label>
-            <label>E-mail: thienshopcontact@xxxxx.xxx</label>
-            <label>Website Address: https://thienshop.xxxx</label>
-            <label>Business license/Tax code: 082XXXXXXX</label>
+            <span class="footer_brand">Thienshop Technology Store</span>
+            <span>📍 Store Address: So X, Phu Giao, Ho Chi Minh City, Vietnam</span>
+            <span>📞 Phone: 09XXXXXXXX</span>
+            <span>✉️ E-mail: thienshopcontact@xxxxx.xxx</span>
+            <span>🌐 Website: https://thienshop.xxxx</span>
+            <span>🏢 Tax code: 082XXXXXXX</span>
         </div>
     </div>
     <div class="end2">
-        <label style="margin-left: 100px;">Copyright © 2026 Thienshop</label>
-        <label style="margin-right: 100px;">Contact: Number phone: 09XXXXXXXX or E-mail: thienshopcontact@xxxx.xxx</label>
+        <span>Copyright © 2026 Thienshop</span>
+        <span>📞 09XXXXXXXX &nbsp;|&nbsp; ✉️ thienshopcontact@xxxx.xxx</span>
     </div>
-    
-</body>
-<div class="note_log_out">
-    <div>
-        <label style="font-size: 25px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b>Are you sure to login out your account?</b></label>
-    </div>
-    <div>
-        <button type="button" class="note_button_log_out" id="id_note_login_out_yes">Yes, I sure to login out</button>
-        <button type="button" class="note_button_log_out" id="id_note_login_out_no">No, I don't login out</button>
+</footer>
+
+<!-- Logout modal -->
+<div class="note_log_out" id="logout_modal">
+    <div class="logout_box">
+        <p>Are you sure you want to log out? 🤔</p>
+        <div class="logout_btns">
+            <button type="button" class="note_button_log_out btn_yes" id="id_note_login_out_yes">✅ Yes, log out</button>
+            <button type="button" class="note_button_log_out btn_no"  id="id_note_login_out_no">❌ No, stay</button>
+        </div>
     </div>
 </div>
+
 <script src="data/CASE_product_suggest.js"></script>
 <script src="data/CPU_product_suggest.js"></script>
 <script src="data/RAM_product_suggest.js"></script>
 <script src="CPE.js"></script>
+</body>
 </html>
