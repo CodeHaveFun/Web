@@ -112,6 +112,49 @@ document.addEventListener("DOMContentLoaded", function () {
                         case 1:
                             window.location.href="details/id1.html";
                             break;
+                        case 2:
+                            window.location.href="details/id2.html";
+                            break;
+                        case 3:
+                            window.location.href="details/id3.html";
+                            break;
+                        case 4:
+                            window.location.href="details/id4.html";
+                            break;
+                        case 5:
+                            window.location.href="details/id5.html";
+                            break;
+                        case 11:
+                            window.location.href="details/id11.html";
+                            break;
+                        case 12:
+                            window.location.href="details/id12.html";
+                            break;
+                        case 13:
+                            window.location.href="details/id13.html";
+                            break;
+                        case 14:
+                            window.location.href="details/id14.html";
+                            break;
+                        case 15:
+                            window.location.href="details/id15.html";
+                            break;
+                        case 21:
+                            window.location.href="details/id21.html";
+                            break;
+                        case 22:
+                            window.location.href="details/id22.html";
+                            break;
+                        case 23:
+                            window.location.href="details/id23.html";
+                            break;
+                        case 24:
+                            window.location.href="details/id24.html";
+                            break;
+                        case 25:
+                            window.location.href="details/id25.html";
+                            break;
+
                     }
                 });
             }
