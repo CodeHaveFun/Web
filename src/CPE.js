@@ -79,6 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (car_set) car_set.style.display = modeGuest ? "none" : "block";
     }, 500);
 
+
+    document.getElementById("product").onclick = function(){
+        document.getElementById("product_tag").classList.toggle('open');
+    };
+
+
+
+
     AllProducts.forEach(product => {
         var el = document.getElementById(product.id);
         if (el) el.addEventListener("click", () => alert(product.name));
@@ -108,3 +116,4 @@ document.getElementById("id_note_login_out_no").addEventListener("click", functi
 account_set.addEventListener("click", function () {
     window.location.href = "custome_acc.html";
 });
+

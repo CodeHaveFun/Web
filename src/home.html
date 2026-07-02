@@ -14,9 +14,10 @@
     <label class="logo_header">🛍️ thienshop</label>
     <nav class="button_navi">
         <button class="home" onclick="window.location.href='home.html'">Home</button>
-        <button class="sales">Product</button>
-        <button class="sales">Contact</button>
+        <button class="product" id="product">Product</button>
+        <button class="contact">Contact</button>
     </nav>
+    
     <div class="header_right">
         <button class="button_acc" id="btn_acc_toggle">
             <img src="https://as2.ftcdn.net/jpg/04/62/63/65/1000_F_462636502_9cDAYuyVvBY4qYJlHjW7vqar5HYS8h8x.jpg" alt="avatar">
@@ -27,14 +28,14 @@
             <button type="button" class="sign_acc" id="id_cart">🛒 Cart</button>
             <button type="button" class="sign_acc" id="id_sign_acc">🔓 Sign in</button>
         </div>
-        <div class="tag" id="product_tag">
-            <button class="ele_tag" id="ram_page"></button>
-            <button class="ele_tag" id="cpu_page"></button>
-            <button class="ele_tag" id="case_page"></button>
-        </div>
     </div>
 </div>
-
+<div class="tag" id="product_tag">
+    <label>All Product</label>
+    <button class="ele_tag" id="ram_page" onclick="window.location.href='RAM_page.html'">RAM</button>
+    <button class="ele_tag" id="cpu_page">CPU</button>
+    <button class="ele_tag" id="case_page">Case PC</button>
+</div>
 <div class="main_body">
     <div class="indu_start">
         <div id="label_image_1">

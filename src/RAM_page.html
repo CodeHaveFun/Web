@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thienshop - Home</title>
+    <link rel="stylesheet" href="home_style_header.css">
+    <link rel="stylesheet" href="home_style_body.css">
+    <link rel="stylesheet" href="home_style_end.css">
+</head>
+<body>
+
+<div class="header">
+    <label class="logo_header">🛍️ thienshop</label>
+    <nav class="button_navi">
+        <button class="home" onclick="window.location.href='home.html'">Home</button>
+        <button class="product" id="product">Product</button>
+        <button class="contact">Contact</button>
+    </nav>
+    
+    <div class="header_right">
+        <button class="button_acc" id="btn_acc_toggle">
+            <img src="https://as2.ftcdn.net/jpg/04/62/63/65/1000_F_462636502_9cDAYuyVvBY4qYJlHjW7vqar5HYS8h8x.jpg" alt="avatar">
+            <span id="show_username"></span>
+        </button>
+        <div class="option_button_acc" id="acc_dropdown">
+            <button type="button" class="sign_acc" id="id_account">👤 My account</button>
+            <button type="button" class="sign_acc" id="id_cart">🛒 Cart</button>
+            <button type="button" class="sign_acc" id="id_sign_acc">🔓 Sign in</button>
+        </div>
+    </div>
+</div>
+<div class="tag" id="product_tag">
+    <label>All Product</label>
+    <button class="ele_tag" id="ram_page">RAM</button>
+    <button class="ele_tag" id="cpu_page">CPU</button>
+    <button class="ele_tag" id="case_page">Case PC</button>
+</div>
+<div class="main_body">
+    <div class="indu_start">
+        <div id="label_image_1">
+            <label id="label1_image_1" style="font-size: 100px;">RAM</label>
+        </div>
+        <img src="https://product.hstatic.net/200000420363/product/_2023_-khung-sp-_1__f0d1cd73f7444d019fcef0f4e50addff_grande.jpg" id="image_1" alt="banner">
+    </div>
+    <div class="suggest_product">
+        <div class="title_head">All products | <b>RAM</b></div>
+        <div class="ele_suggest" id="sug_ram"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="end1">
+        <div class="inducend">
+            <span class="footer_brand">Thienshop Technology Store</span>
+            <span>📍 Store Address: So X, Phu Giao, Ho Chi Minh City, Vietnam</span>
+            <span>📞 Phone: 09XXXXXXXX</span>
+            <span>✉️ E-mail: thienshopcontact@xxxxx.xxx</span>
+            <span>🌐 Website: https://thienshop.xxxx</span>
+            <span>🏢 Tax code: 082XXXXXXX</span>
+        </div>
+    </div>
+    <div class="end2">
+        <span>Copyright © 2026 Thienshop</span>
+        <span>📞 09XXXXXXXX &nbsp;|&nbsp; ✉️ thienshopcontact@xxxx.xxx</span>
+    </div>
+</footer>
+
+<!-- Logout modal -->
+<div class="note_log_out" id="logout_modal">
+    <div class="logout_box">
+        <p>Are you sure you want to log out?</p>
+        <div class="logout_btns">
+            <button type="button" class="note_button_log_out btn_yes" id="id_note_login_out_yes">✅ Yes, log out</button>
+            <button type="button" class="note_button_log_out btn_no"  id="id_note_login_out_no">❌ No, stay</button>
+        </div>
+    </div>
+</div>
+
+<script src="data/CASE_product_suggest.js"></script>
+<script src="data/CPU_product_suggest.js"></script>
+<script src="data/RAM_product_suggest.js"></script>
+<script src="CPE.js"></script>
+</body>
+</html>
