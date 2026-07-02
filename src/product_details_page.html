@@ -4,8 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thienshop - Product details</title>
+    <style>
+        /* Reset margin/padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+
+        /* Container chính - sử dụng Flexbox để xếp ngang */
+        .info_sp {
+            display: flex;
+            gap: 40px;                    /* Khoảng cách giữa ảnh và thông tin */
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Phần ảnh sản phẩm */
+        .info_sp img {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;               /* Không co lại khi thiếu chỗ */
+        }
+
+        /* Phần thông tin chi tiết bên phải */
+        .info_cn {
+            flex: 1;                      /* Chiếm phần còn lại */
+            display: flex;
+            flex-direction: column;
+            gap: 16px;                    /* Khoảng cách giữa các dòng */
+        }
+
+        /* Style cho danh sách thông tin */
+        .info_cn ul {
+            list-style: none;             /* Bỏ dấu chấm mặc định */
+            padding: 0;
+        }
+
+        .info_cn ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .info_cn ul li:last-child {
+            border-bottom: none;
+        }
+
+        .info_cn ul li strong {
+            color: #2c3e50;
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        /* Tên sản phẩm */
+        .product-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Giá sản phẩm */
+        .product-price {
+            font-size: 32px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .product-price span {
+            font-size: 18px;
+            color: #888;
+            text-decoration: line-through;
+            margin-left: 12px;
+            font-weight: normal;
+        }
+
+        /* Nút mua hàng */
+        .btn-buy {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: flex-start;       /* Không bị kéo dãn toàn bộ */
+        }
+
+        .btn-buy:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-buy:active {
+            transform: scale(0.96);
+        }
+
+        /* Responsive: xếp dọc trên điện thoại */
+        @media (max-width: 700px) {
+            .info_sp {
+                flex-direction: column;    /* Xếp dọc */
+                align-items: center;
+                padding: 20px;
+            }
+
+            .info_sp img {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .info_cn {
+                width: 100%;
+            }
+
+            .product-name {
+                font-size: 22px;
+            }
+
+            .product-price {
+                font-size: 26px;
+            }
+
+            .btn-buy {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="info_sp">
+        <!-- Ảnh sản phẩm -->
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQywAY--A53a8Ll63TBBIspd17zo6beYCBL-qLDzHJKzlg81Xl0tbW3k2ZTcVG83tS6NYwPCiigpVkkL6XmSTglDBcRcEr96OaC1BAsca221hCJiVzwn6OyjeFqFX0hYZrHutG0uqA&usqp=CAc" 
+             alt="Sản phẩm">
+
+        <!-- Thông tin chi tiết bên phải -->
+        <div class="info_cn">
+            <h1 class="product-name">Áo sơ mi nam cao cấp</h1>
+            
+            <div class="product-price">
+                250.000đ
+                <span>350.000đ</span>
+            </div>
+
+            <ul>
+                <li><strong>Thương hiệu:</strong> Thienshop</li>
+                <li><strong>Chất liệu:</strong> Cotton 100%</li>
+                <li><strong>Màu sắc:</strong> Trắng, Xanh, Đen</li>
+                <li><strong>Kích thước:</strong> S, M, L, XL</li>
+                <li><strong>Tình trạng:</strong> <span style="color: #27ae60; font-weight: bold;">Còn hàng</span></li>
+                <li><strong>Mô tả:</strong> Áo sơ mi form rộng, thoáng mát, thích hợp mặc đi làm hoặc đi chơi.</li>
+            </ul>
+
+            <button class="btn-buy">🛒 Thêm vào giỏ hàng</button>
+        </div>
+    </div>
 </body>
 </html>

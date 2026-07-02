@@ -13,7 +13,7 @@
 <div class="header">
     <label class="logo_header">🛍️ thienshop</label>
     <nav class="button_navi">
-        <button class="home">Home</button>
+        <button class="home" onclick="window.location.href='home.html'">Home</button>
         <button class="sales">Product</button>
         <button class="sales">Contact</button>
     </nav>
@@ -26,6 +26,11 @@
             <button type="button" class="sign_acc" id="id_account">👤 My account</button>
             <button type="button" class="sign_acc" id="id_cart">🛒 Cart</button>
             <button type="button" class="sign_acc" id="id_sign_acc">🔓 Sign in</button>
+        </div>
+        <div class="tag" id="product_tag">
+            <button class="ele_tag" id="ram_page"></button>
+            <button class="ele_tag" id="cpu_page"></button>
+            <button class="ele_tag" id="case_page"></button>
         </div>
     </div>
 </div>
@@ -67,7 +72,7 @@
 <!-- Logout modal -->
 <div class="note_log_out" id="logout_modal">
     <div class="logout_box">
-        <p>Are you sure you want to log out? 🤔</p>
+        <p>Are you sure you want to log out?</p>
         <div class="logout_btns">
             <button type="button" class="note_button_log_out btn_yes" id="id_note_login_out_yes">✅ Yes, log out</button>
             <button type="button" class="note_button_log_out btn_no"  id="id_note_login_out_no">❌ No, stay</button>
