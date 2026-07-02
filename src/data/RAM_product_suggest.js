@@ -17,7 +17,7 @@ const ramProducts = [
         id: 23,
         name: "RAM G.SKILL Trident Z Neo RGB DDR4 64GB 3600MHz",
         price: "13,899,000₫",
-        image: "https://producRAM G.SKILL Trident Z Neo RGB DDR4 64GB 3600MHzt.hstatic.net/200000420363/product/_2023_-khung-sp-_1__f0d1cd73f7444d019fcef0f4e50addff_grande.jpg",
+        image: "https://product.hstatic.net/200000420363/product/_2023_-khung-sp-_1__f0d1cd73f7444d019fcef0f4e50addff_grande.jpg",
         inStock: true
     },
     {

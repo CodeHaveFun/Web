@@ -44,55 +44,84 @@ function renderProductsGPU() {
 const AllProducts = [...ramProducts, ...CaseProducts, ...CPUProducts];
 
 document.addEventListener("DOMContentLoaded", function () {
-    renderProductsRAM();
-    renderProductsCPU();
-    renderProductsGPU();
+    // ===== CHỈ CHẠY NẾU CÓ PHẦN TỬ TƯƠNG ỨNG =====
+    
+    // 1. Render sản phẩm (chỉ chạy nếu có element)
+    if (document.getElementById("sug_ram")) {
+        if (typeof renderProductsRAM === 'function') renderProductsRAM();
+    }
+    if (document.getElementById("sug_cpu")) {
+        if (typeof renderProductsCPU === 'function') renderProductsCPU();
+    }
+    if (document.getElementById("sug_gpu")) {
+        if (typeof renderProductsGPU === 'function') renderProductsGPU();
+    }
 
-    // Dropdown toggle
+    // 2. Dropdown toggle (luôn chạy vì header có ở mọi trang)
     const btnAccToggle = document.getElementById("btn_acc_toggle");
     const accDropdown = document.getElementById("acc_dropdown");
-    btnAccToggle.addEventListener("click", function (e) {
-        e.stopPropagation();
-        accDropdown.classList.toggle("open");
-    });
-    document.addEventListener("click", function () {
-        accDropdown.classList.remove("open");
-    });
+    
+    if (btnAccToggle && accDropdown) {
+        btnAccToggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            accDropdown.classList.toggle("open");
+        });
+        
+        document.addEventListener("click", function () {
+            accDropdown.classList.remove("open");
+        });
+    }
 
-    // Update account UI mỗi 500ms
-    UpdateAcc = setInterval(() => {
-        var info_acc = sessionStorage.getItem("User_account");
-        var showUsername = document.getElementById("show_username");
-        var signAcc = document.getElementById("id_sign_acc");
-        if (showUsername && signAcc) {
-            if (!info_acc || info_acc === "") {
-                showUsername.textContent = "Guest";
-                signAcc.textContent = "🔓 Sign in";
-                modeGuest = true;
-            } else {
-                signAcc.textContent = "🔴 Log out";
-                showUsername.textContent = info_acc;
-                modeGuest = false;
+    // 3. Update account UI (chỉ chạy nếu có phần tử)
+    const showUsername = document.getElementById("show_username");
+    const signAcc = document.getElementById("id_sign_acc");
+    
+    if (showUsername || signAcc) {
+        let modeGuest = true;
+        const account_set = document.getElementById("account_set");
+        const car_set = document.getElementById("car_set");
+        
+        setInterval(() => {
+            var info_acc = sessionStorage.getItem("User_account");
+            
+            if (showUsername && signAcc) {
+                if (!info_acc || info_acc === "") {
+                    showUsername.textContent = "Guest";
+                    signAcc.textContent = "🔓 Sign in";
+                    modeGuest = true;
+                } else {
+                    signAcc.textContent = "🔴 Log out";
+                    showUsername.textContent = info_acc;
+                    modeGuest = false;
+                }
             }
-        }
-        if (account_set) account_set.style.display = modeGuest ? "none" : "block";
-        if (car_set) car_set.style.display = modeGuest ? "none" : "block";
-    }, 500);
+            
+            if (account_set) account_set.style.display = modeGuest ? "none" : "block";
+            if (car_set) car_set.style.display = modeGuest ? "none" : "block";
+        }, 500);
+    }
 
-
-    document.getElementById("product").onclick = function(){
-        document.getElementById("product_tag").classList.toggle('open');
-    };
-
-
-
-
-    AllProducts.forEach(product => {
-        var el = document.getElementById(product.id);
-        if (el) el.addEventListener("click", () => alert(product.name));
-    });
+    // 4. Product click alerts (chỉ chạy nếu có AllProducts)
+    if (typeof AllProducts !== 'undefined' && AllProducts.length > 0) {
+        AllProducts.forEach(product => {
+            var el = document.getElementById(product.id);
+            if (el) {
+                el.addEventListener("click", () => {
+                    
+                    switch (product.id){
+                        case 1:
+                            window.location.href="details/id1.html";
+                            break;
+                    }
+                });
+            }
+            
+        });
+    }
 });
-
+document.getElementById("product").onclick = function(){
+    document.getElementById("product_tag").classList.toggle('open');
+};
 function LoginOutAccount() {
     if (UpdateAcc) { clearInterval(UpdateAcc); UpdateAcc = null; }
     sessionStorage.clear();

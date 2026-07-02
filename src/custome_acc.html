@@ -19,6 +19,7 @@
     <aside class="option_menu">
         <button class="elem_option" id="id_profile">👤 Profile</button>
         <button class="elem_option" id="id_privacy">🔒 Privacy & Security</button>
+        <button class="elem_option" id="id_feedback">💬 Feedback</button>
         <button class="elem_option" id="id_logout">🔴 Log out</button>
         <button class="elem_option" id="id_del_acc">🗑️ Delete account</button>
         <div class="menu_divider"></div>
@@ -103,7 +104,17 @@
                 <p class="note_warn">⚠️ Saving will auto <b>log you out</b> — you'll need to sign in again.</p>
             </div>
         </div>
-
+        <div id="id_tag_feedback">
+            <h2 class="section_title">Feedback</h2>
+            <div class="section_divider"></div>
+            <div class="field_group">
+                <label for="">Do you have any issues to report or suggestions for us?</label>
+                <textarea rows="10" placeholder="Type your report or suggestions" class="input_elem" style="height: 200px;width: auto;"></textarea>
+            </div>
+            <div class="save_row">
+                <button type="submit" id="profile_save" class="button_save">📩 Send</button>
+            </div>
+        </div>
         <!-- LOG OUT -->
         <div id="id_tag_logout">
             <h2 class="section_title danger_text">Log out</h2>
