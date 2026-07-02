@@ -33,19 +33,5 @@ const CaseProducts = [
         price: "3.490.000₫",
         image: "https://product.hstatic.net/200000722513/product/3500x_link_wht_01_8b16de1beb35479d84a3e48c7d759372_master.png",
         inStock: true
-    },
-    {
-        id: 6,
-        name: "Case PC Xigmatek QUANTUM 3GF",
-        price: "990.000₫",
-        image: "https://product.hstatic.net/200000722513/product/image_20240621094047_f2f9063fcfb24f41839e1d1b198c77ae_master.jpg",
-        inStock: true
-    },
-    {
-        id: 7,
-        name: "Case PC Lian Li O11D Vision White",
-        price: "3.690.000₫",
-        image: "https://product.hstatic.net/200000722513/product/v__m_y_t_nh_lian_li_o11d_vision_white-06_f3eecb1c0a674b9f8169855d3f66217e_master.jpg   ",
-        inStock: true
     }
 ];

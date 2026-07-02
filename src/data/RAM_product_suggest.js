@@ -17,7 +17,7 @@ const ramProducts = [
         id: 23,
         name: "RAM G.SKILL Trident Z Neo RGB DDR4 64GB 3600MHz",
         price: "13,899,000₫",
-        image: "https://product.hstatic.net/200000420363/product/_2023_-khung-sp-_1__f0d1cd73f7444d019fcef0f4e50addff_grande.jpg",
+        image: "https://producRAM G.SKILL Trident Z Neo RGB DDR4 64GB 3600MHzt.hstatic.net/200000420363/product/_2023_-khung-sp-_1__f0d1cd73f7444d019fcef0f4e50addff_grande.jpg",
         inStock: true
     },
     {
@@ -33,19 +33,6 @@ const ramProducts = [
         price: "2,290,000₫",
         image: "https://product.hstatic.net/200000420363/product/tai_xuong__2__bc3603c7ec8b4120b4d79f9c27072074_compact.png",
         inStock: true
-    },
-    {
-        id: 26,
-        name: "RAM XPG Spectrix D50 RGB 8GB DDR4 3200MHz",
-        price: "1,890,000₫",
-        image: "https://product.hstatic.net/200000420363/product/1_3f24d9a8c1574f2d9032c9f482d4589d_compact.jpg",
-        inStock: true
-    },
-    {
-        id: 27,
-        name: "RAM G.SKILL Ripjaws V 16GB DDR4 3200MHz",
-        price: "2,790,000₫",
-        image: "https://product.hstatic.net/200000420363/product/_2023_-khung-sp-_1__62bc0bbae824443082303811389d44b5_grande.jpg",
-        inStock: true
     }
+    
 ];

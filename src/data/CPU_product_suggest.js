@@ -33,20 +33,5 @@ const CPUProducts = [
         price: "1,780,000₫",
         image: "https://cdn.hstatic.net/products/200000420363/screenshot__8__5b5888620f6042798feb593e634ae00f_compact.jpg",
         inStock: true
-    },
-    {
-        id: 16,
-        name: "CPU Intel Core i3-12100 4C/8T 4.3GHz",
-        price: "4,590,000₫",
-        image: "https://cdn.hstatic.net/products/200000420363/t_i_xu_ng__35__b2e271008d3b43a8b7fe797c454afbb7_compact.png",
-        inStock: true
-    },
-    {
-        id: 17,
-        name: "CPU AMD Ryzen 5 5600X 6C/12T 4.6GHz",
-        price: "3,890,000₫",
-        image: "https://cdn.hstatic.net/products/200000420363/r5-gen-5_027c969098d941bbb045c81_7a054baea0924a0eaa92a21cdefac2c4_compact.png",
-        inStock: true
-    },
-    
+    }
 ];
